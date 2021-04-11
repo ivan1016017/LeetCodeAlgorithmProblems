@@ -1,0 +1,15 @@
+[console_scripts]
+putup = pyscaffold.cli:run
+
+[pyscaffold.cli]
+cirrus = pyscaffold.extensions.cirrus:Cirrus
+config = pyscaffold.extensions.config:Config
+gitlab = pyscaffold.extensions.gitlab_ci:GitLab
+interactive = pyscaffold.extensions.interactive:Interactive
+namespace = pyscaffold.extensions.namespace:Namespace
+no_pyproject = pyscaffold.extensions.no_pyproject:NoPyProject
+no_skeleton = pyscaffold.extensions.no_skeleton:NoSkeleton
+no_tox = pyscaffold.extensions.no_tox:NoTox
+pre_commit = pyscaffold.extensions.pre_commit:PreCommit
+venv = pyscaffold.extensions.venv:Venv
+
