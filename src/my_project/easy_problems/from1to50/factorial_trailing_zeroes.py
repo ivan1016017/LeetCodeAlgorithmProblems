@@ -27,5 +27,5 @@ class Solution:
             return temp
 
 solution = Solution()
-print(solution.trailingZeroes())
+print(1)
 
