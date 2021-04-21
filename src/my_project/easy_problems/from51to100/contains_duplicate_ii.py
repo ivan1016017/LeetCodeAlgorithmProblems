@@ -1,6 +1,8 @@
 from typing import List
 from collections import defaultdict
 
+import random
+
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
         counts = defaultdict(int)
@@ -12,9 +14,10 @@ class Solution:
                 return True
         return False
 
-# sdjfskdfsdhfhsdhfusudfhuh
-
 
 
 solution =Solution()
 print(solution.containsNearbyDuplicate([1,2,3,4,1],3))
+
+random.seed(38)
+print(random.choice([1,2]))
