@@ -17,4 +17,4 @@ class Solution:
 solution = Solution()
 print(solution.missingNumber( [0,1]))
 
-# new sample message to be deleted
+# sample message
