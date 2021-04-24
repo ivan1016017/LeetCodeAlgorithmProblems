@@ -16,3 +16,5 @@ class Solution:
 
 solution = Solution()
 print(solution.missingNumber( [0,1]))
+
+# sample message
