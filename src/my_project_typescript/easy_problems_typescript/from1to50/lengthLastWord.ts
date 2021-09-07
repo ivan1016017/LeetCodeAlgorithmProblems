@@ -1,6 +1,7 @@
 function lengthOfLastWord(s: string): number {
     // define length of the string
     s = s.trim();
+    
     let stringLength: number = s.length;
 
     // initialize solution 
@@ -16,4 +17,4 @@ function lengthOfLastWord(s: string): number {
 
 
 console.log(lengthOfLastWord("Hello World"));
-console.log(lengthOfLastWord(" "));
+console.log(lengthOfLastWord(" Hello"));
