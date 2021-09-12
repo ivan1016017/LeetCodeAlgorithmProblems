@@ -4,8 +4,8 @@ class Solution:
     def sortArrayByParity(self, nums: List[int]) -> List[int]:
 
         # initialize variables
-        odd_list = list()
         even_list = list()
+        odd_list = list()
 
         for number in nums:
             if number % 2 == 1:
