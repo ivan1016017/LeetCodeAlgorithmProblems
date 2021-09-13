@@ -19,7 +19,6 @@ function luckyNumbers (matrix: number[][]): number[] {
 
     for (let i = 0; i < matrix.length; i++){
         for (let j = 0; j < matrix[0].length; j++){
-            console.log( getRowMin(matrix, i), getColumnMax(matrix,j))
             if (matrix[i][j] === getRowMin(matrix, i) && matrix[i][j] === getColumnMax(matrix,j)){
                 solution.push(matrix[i][j])
             }
