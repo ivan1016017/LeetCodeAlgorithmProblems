@@ -2,10 +2,10 @@ from typing import List
 
 class Solution:
     def shortestToChar(self, s: str, c: str) -> List[int]:
-
+        temp = None
         index_target: List[int] = list()
         solution: List[int] = list()
-        temp = None
+        
 
         for i in range(len(s)):
             if s[i] == c:
