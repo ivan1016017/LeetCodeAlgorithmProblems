@@ -5,10 +5,11 @@ class Solution:
 
         solution = True
 
-        target.sort()
-        arr.sort()
+
 
         print(target)
+        target.sort()
+        arr.sort()
         print(arr)
         len_target = len(target)
 
