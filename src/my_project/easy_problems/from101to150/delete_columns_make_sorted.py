@@ -3,9 +3,9 @@ from typing import List
 class Solution:
     def minDeletionSize(self, strs: List[str]) -> int:
 
-        temp: str = ""
         temp_list: List[str] = list()
         temp_list_ordered: List[str] = list()
+        temp: str = ""
         temp_ordered = None
         solution: int = 0
       
@@ -24,10 +24,8 @@ class Solution:
         for i in range(len(temp_list)):
             if temp_list[i] != temp_list_ordered[i]:
                 solution += 1
-
-            
+     
         return solution
-
 
 solution = Solution()
 print(solution.minDeletionSize(strs = ["zyx","wvu","tsr"]))
