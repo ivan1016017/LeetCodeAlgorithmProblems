@@ -3,8 +3,9 @@ from typing import List
 class Solution:
     def shortestToChar(self, s: str, c: str) -> List[int]:
         temp = None
-        index_target: List[int] = list()
         solution: List[int] = list()
+        index_target: List[int] = list()
+        
         
 
         for i in range(len(s)):
