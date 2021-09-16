@@ -13,7 +13,6 @@ function commonChars(words: string[]): string[] {
             }
         }
     }
-    console.log(firstWord)
     for (let letter of firstWord){
         solution.push(letter)
     }
