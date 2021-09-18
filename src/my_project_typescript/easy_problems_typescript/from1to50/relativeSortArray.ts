@@ -17,8 +17,7 @@ function relativeSortArray(arr1: number[], arr2: number[]): number[] {
             leftArray.push(item)
         }
     }
-// this is a new comment 
-let myVaribable: number = 0
+
     for (let item of arr1){
         if (!arr2.includes(item)){
             rightArray.push(item)
