@@ -17,15 +17,14 @@ function relativeSortArray(arr1: number[], arr2: number[]): number[] {
             leftArray.push(item)
         }
     }
-// this is a new comment how to revert changes in git 
 
-let myVar: number = 0
     for (let item of arr1){
         if (!arr2.includes(item)){
             rightArray.push(item)
         }
     }
-
+// thiw is a new comment
+let myVariable: number = 0
     rightArray = rightArray.sort((a,b) => a <=b? -1: 1)
 
     return leftArray.concat(rightArray)
