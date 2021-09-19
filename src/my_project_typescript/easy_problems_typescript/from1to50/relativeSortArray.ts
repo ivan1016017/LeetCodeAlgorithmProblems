@@ -23,8 +23,7 @@ function relativeSortArray(arr1: number[], arr2: number[]): number[] {
             rightArray.push(item)
         }
     }
-// this is a new variable to be reverted
-let myVar: number = 0
+
     rightArray = rightArray.sort((a,b) => a <=b? -1: 1)
 
     return leftArray.concat(rightArray)
