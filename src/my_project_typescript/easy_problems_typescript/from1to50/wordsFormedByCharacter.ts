@@ -6,12 +6,7 @@ function countCharacters(words: string[], chars: string): number {
     let dictChars: any 
 
     function fromStringsToDict(word: string): any{
-    // new changes to the file wordFormedByCharacter.ts
-
-    let firstVariable: string = "a"
-    let secondVariable: string = "b"
-    let thirdVariable: string = "c"
-
+        
         let tempDict: any = {}
 
         for (let letter of word){
