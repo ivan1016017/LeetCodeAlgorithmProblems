@@ -23,11 +23,6 @@ function relativeSortArray(arr1: number[], arr2: number[]): number[] {
             rightArray.push(item)
         }
     }
-// these are some changes that I do not want to include in my project
-
-let firstNumber: number = 1
-let secondNumber: number = 2
-let thirdNumber: number = 3
 
     rightArray = rightArray.sort((a,b) => a <=b? -1: 1)
 
