@@ -18,9 +18,6 @@ function relativeSortArray(arr1: number[], arr2: number[]): number[] {
         }
     }
 
-// this is a new comment that I  want to revert 
-let myVar: number = 0;
-
     for (let item of arr1){
         if (!arr2.includes(item)){
             rightArray.push(item)
