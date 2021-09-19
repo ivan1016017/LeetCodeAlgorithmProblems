@@ -23,6 +23,10 @@ function relativeSortArray(arr1: number[], arr2: number[]): number[] {
             rightArray.push(item)
         }
     }
+// this is another variable that I want to remove
+
+let firstVariable: number = 1;
+let secondVariable: number = 2;
 
     rightArray = rightArray.sort((a,b) => a <=b? -1: 1)
 
