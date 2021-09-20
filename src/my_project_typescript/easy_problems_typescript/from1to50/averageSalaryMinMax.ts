@@ -4,12 +4,6 @@ function average(salary: number[]): number {
     let minNumber: number = Math.min.apply(null, salary);
 
 
-//  This is a new variabel that I want to delete 
-
-let numberOne: number = 1
-let numberTwo: number = 2 
-
-
     salary = salary.sort((a,b) => a<=b?-1:1)
 
     let totalSum: number = 0;
