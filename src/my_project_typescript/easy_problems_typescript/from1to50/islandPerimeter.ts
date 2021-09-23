@@ -1,8 +1,7 @@
 function islandPerimeter(grid: number[][]): number {
 
     let perimeter: number = 0;
-// this is a new variable that I wont use
-let variableOne: number = 1
+
     for (let i = 0; i < grid.length; i++){
         for (let j = 0; j < grid[0].length; j++){
             if (grid[i][j] ==1){
