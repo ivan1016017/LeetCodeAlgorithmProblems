@@ -10,9 +10,9 @@ class Solution:
             order_dict[i] += 1
 
 
+        solution_set = set()
 
         solution: List[int] = list()
-        solution_set = set()
 
         for i in order_dict.values():
             solution.append(i)
@@ -25,4 +25,3 @@ solution = Solution()
 
 print(solution.uniqueOccurrences(arr = [1,2,2,1,1,3]))
 
-print(solution.uniqueOccurrences(arr = [1,2]))
