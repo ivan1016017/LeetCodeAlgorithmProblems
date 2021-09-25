@@ -15,6 +15,11 @@ function allCellsDistOrder(rows: number, cols: number, rCenter: number, cCenter:
     
     return answer
 };
+// function to be deleted
+
+function myFunction(newVariable: number){
+    return newVariable
+}
 
 allCellsDistOrder( 2,  2,  0,  1)
 allCellsDistOrder( 2, 3, 1, 2)
