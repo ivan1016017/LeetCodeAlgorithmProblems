@@ -16,6 +16,10 @@ function allCellsDistOrder(rows: number, cols: number, rCenter: number, cCenter:
     return answer
 };
 
+// this si a new comment to be reverted
+
+let newVariable: number = 0 
+
 
 allCellsDistOrder( 2,  2,  0,  1)
 allCellsDistOrder( 2, 3, 1, 2)
