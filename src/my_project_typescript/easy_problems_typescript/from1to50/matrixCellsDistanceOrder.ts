@@ -16,6 +16,12 @@ function allCellsDistOrder(rows: number, cols: number, rCenter: number, cCenter:
     return answer
 };
 
+// This is a new function created in typescript
+
+function myNewFunction(myVariable: number):number{
+    return myVariable
+}
+
 allCellsDistOrder( 2,  2,  0,  1)
 allCellsDistOrder( 2, 3, 1, 2)
 
