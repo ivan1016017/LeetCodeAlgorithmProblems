@@ -16,11 +16,7 @@ function allCellsDistOrder(rows: number, cols: number, rCenter: number, cCenter:
     return answer
 };
 
-// one function
 
-function newFunctin(myVariable: number){
-    return myVariable
-}
 allCellsDistOrder( 2,  2,  0,  1)
 allCellsDistOrder( 2, 3, 1, 2)
 
