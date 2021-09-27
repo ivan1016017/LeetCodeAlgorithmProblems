@@ -57,10 +57,7 @@ function numRookCaptures(board: string[][]): number {
         }
     }
 
-// new function to be reverted 
-function newFunction(firstVariable: number){
-    return firstVariable*2
-}
+
     return numberPawns
 };
 
