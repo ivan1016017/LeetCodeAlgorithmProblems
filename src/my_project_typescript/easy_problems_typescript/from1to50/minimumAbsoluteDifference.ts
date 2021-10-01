@@ -19,10 +19,6 @@ function minimumAbsDifference(arr: number[]): number[][] {
     return answer
 };
 
-// function to be reverted 
-function myFunction(myVariable:  number): number{
-    return myVariable*7
-}
 
 console.log(minimumAbsDifference([4,2,1,3]))
 
