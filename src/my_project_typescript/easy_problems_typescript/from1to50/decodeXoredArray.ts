@@ -12,11 +12,6 @@ function decode(encoded: number[], first: number): number[] {
 
 };
 
-// new function to be reverted 
-
-function newFunction(num: number){
-    return num**2
-}
 
 console.log(decode( [1,2,3],  1))
 
