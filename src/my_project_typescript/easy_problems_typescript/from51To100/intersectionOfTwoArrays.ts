@@ -36,9 +36,3 @@ function intersection(nums1: number[], nums2: number[]): number[] {
 console.log(intersection([1,2,2,1], [2,2]))
 
 console.log(intersection([4,9,5], [9,4,9,8,4]))
-
-// This is a function to be reverted 
-
-function newFunction(num: number){
-    return 7*num
-}
