@@ -66,6 +66,3 @@ print(solution.findWords(words = ["omk"]))
 print(solution.findWords(words = ["adsdf","sfd"]))
 
 
-# function to be reverted 
-def myFunction(num):
-    return num*2
