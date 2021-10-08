@@ -27,6 +27,9 @@ print(solution.isToeplitzMatrix(matrix = [[18],[66]]))
 
 print(solution.isToeplitzMatrix(matrix = [[11,74,0,93],[40,11,74,7]]))
 
+# new function to be reverted 
 
+def new_function(num: int) -> int:
+    return num*7
 
 
