@@ -43,6 +43,25 @@ def power_set(lst):
 
     return pw_set
 
+
+class SecondSolution:
+    def subsetXORSum(self, nums: List[int]) -> int:
+        
+        def xor_sum (subset,nums):
+            if len(nums)==0:
+                xor=0
+                for i in subset:
+                    xor=xor^i
+                return xor
+            else:
+                return xor_sum(subset+[nums[0]],nums[1:])+ xor_sum(subset,nums[1:])
+            
+        
+        return xor_sum([],nums)
+        
+
+
+
 print(power_set([1,2,3]))
 
 
