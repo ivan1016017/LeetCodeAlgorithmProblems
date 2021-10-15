@@ -28,3 +28,7 @@ print(solution.maxAscendingSum(nums = [12,17,15,13,10,11,12]))
 
 print(solution.maxAscendingSum(nums = [100,10,1]))
 
+# function to be deleted
+def new_function(a):
+    return a*2
+
