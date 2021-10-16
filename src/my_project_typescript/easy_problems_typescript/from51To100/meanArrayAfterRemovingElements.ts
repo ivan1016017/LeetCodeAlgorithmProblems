@@ -14,3 +14,9 @@ function trimMean(arr: number[]): number {
 
 
 console.log(trimMean([6,2,7,5,1,2,0,3,10,2,5,0,5,5,0,8,7,6,8,0]))
+
+
+// funciton to be reverted 
+function newFunction(nums: number): number {
+    return nums * 7
+}
