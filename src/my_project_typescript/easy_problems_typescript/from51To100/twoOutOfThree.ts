@@ -54,3 +54,11 @@ console.log(twoOutOfThree([1,1,3,2],  [2,3], [3]))
 console.log(twoOutOfThree([3,1],  [2,3],  [1,2]))
 
 console.log(twoOutOfThree([1,2,2],  [4,3,3], [5]))
+
+
+// function to be reverted 
+
+function newFunction(num: number ): number{
+    return num *5
+    
+}
