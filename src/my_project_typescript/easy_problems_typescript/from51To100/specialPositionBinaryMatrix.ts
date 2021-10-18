@@ -40,3 +40,9 @@ console.log(numSpecial([[1,0,0],
 //     [1,0,0,0],
 //     [0,1,1,0],
 //     [0,0,0,0]]))
+
+
+// function to be reverted 
+function newFunction(s: string): string{
+    return s 
+}
