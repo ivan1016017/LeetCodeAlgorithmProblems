@@ -9,7 +9,7 @@ function reverseString(s: string[]): void {
         s[i] = tempRight
         s[lenS-1-i] = tempLeft
     }
-    console.log(s)
+    
 
 };
 
