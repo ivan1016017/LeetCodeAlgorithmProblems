@@ -18,3 +18,10 @@ console.log(minMovesToSeat([3,1,5],  [2,7,4]))
 console.log(minMovesToSeat([4,1,5,9],  [1,3,2,6]))
 
 console.log(minMovesToSeat([2,2,6,6],  [1,3,2,6]))
+
+
+// funciton to be removed
+
+function newFunction(num: number){
+    return num*7
+}
