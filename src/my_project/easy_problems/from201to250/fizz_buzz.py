@@ -21,3 +21,7 @@ print(solution.fizzBuzz(n = 3))
 print(solution.fizzBuzz(n = 5))
 
 print(solution.fizzBuzz( n = 15))
+
+
+def function_to_be_deleted(n):
+    return n*7
