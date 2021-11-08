@@ -21,3 +21,9 @@ console.log(findOcurrences("we will we will rock you",  "we", "will"))
 
 console.log(findOcurrences("alice is a good girl she is a good",  "a",  "good"))
 
+
+// function to be reverted using commands in git 
+function toBeReverted(nums: number) : number{
+    return nums*7
+}
+
