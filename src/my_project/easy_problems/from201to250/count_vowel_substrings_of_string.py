@@ -47,5 +47,8 @@ print(solution.countVowelSubstrings(word = "bbaeixoubb"))
 
 print(solution.countVowelSubstrings(word = "poazaeuioauoiioaouuouaui"))
 
+# function to be reverted
 
+def function_reverted(num):
+    return num * 7
 
