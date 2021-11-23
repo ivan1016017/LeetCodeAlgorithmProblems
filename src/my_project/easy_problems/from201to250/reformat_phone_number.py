@@ -37,3 +37,8 @@ print(solution.reformatNumber(number = "123 4-5678"))
 print(solution.reformatNumber(number = "12"))
 
 print(solution.reformatNumber(number = "--17-5 229 35-39475 "))
+
+
+# funciton to be reverted
+def function_reverted(num):
+    return num*7
