@@ -38,23 +38,6 @@ class Solution:
         return answer
     
     
-# def sum_digitst(num: int) -> int:
-    
-#     answer = 0
-#     quotient = 0
-    
-#     num_to_string = str(num)
-#     len_num = len(num_to_string)
-    
-#     for i in range(len_num):
-#         quotient = num // (10**(len_num -1 - i))
-#         print(quotient, 10**(len_num -1 - i), num)
-#         answer += quotient
-#         num = num % (10**(len_num -1 - i))
-        
-    
-#     return answer 
-
 
 solution = Solution()
 
