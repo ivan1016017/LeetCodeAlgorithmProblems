@@ -26,10 +26,11 @@ class Solution:
         for i in range(len_s):
             temp += str(ord(s[i]) -96)
             
-              
+        print(temp)      
             
         answer = int(temp)
-            
+        
+        print(answer)
             
         for l in range(k):
             answer = sum_digits(answer)
@@ -41,8 +42,11 @@ class Solution:
 
 solution = Solution()
 
-print(solution.getLucky(s = "iiii", k = 1))
+# print(solution.getLucky(s = "iiii", k = 1))
 
-print(solution.getLucky( s = "leetcode", k = 2))
+# print(solution.getLucky( s = "leetcode", k = 2))
 
-print(solution.getLucky(s = "zbax", k = 2))
+# print(solution.getLucky(s = "zbax", k = 2))
+
+print(solution.getLucky("dbvmfhnttvr", 5))
+
