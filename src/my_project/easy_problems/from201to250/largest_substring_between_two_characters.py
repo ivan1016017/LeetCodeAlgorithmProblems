@@ -24,6 +24,7 @@ class Solution:
         dct=collections.defaultdict(list)
         for i,char in enumerate(s):
             dct[char].append(i)
+        print(dct)
         max_count=-1
         for el in dct:
             if dct[el][-1]-dct[el][0]>max_count:
