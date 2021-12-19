@@ -1,15 +1,16 @@
 from typing import List 
-
+import math
 class Solution:
     def maximumDifference(self, nums: List[int]) -> int:
         answer: int = -1
+        min_val =  math.inf
         len_nums: int = len(nums)
         
         for i in range(len_nums):
-            for j in range(i+1, len_nums):
-                temp = nums[j] - nums[i]
-                if temp > 0 and temp > answer:
-                    answer = temp
+            if nums[i] < min_val:
+                min_val = nums[i]
+            elif nums[i] - min_val > 0:
+                answer = max(answer, nums[i] - min_val)
         
         
         return answer 
