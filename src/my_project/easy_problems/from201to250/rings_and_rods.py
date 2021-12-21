@@ -29,3 +29,8 @@ class Solution:
 solution = Solution()
 
 print(solution.countPoints(rings = "B0B6G0R6R0R6G9"))
+
+
+# function to be reverted
+def function_to_be_reverted(nums):
+    return nums
