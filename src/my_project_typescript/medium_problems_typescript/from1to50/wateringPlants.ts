@@ -20,7 +20,7 @@ function wateringPlants(plants: number[], capacity: number): number {
 };
 
 
-function wateringPlantsTwo(plants: number[], capacity: number): number {
+function anotherWateringPlantsTwo(plants: number[], capacity: number): number {
 
     let returnCount: number = 0
     let tempCapacity: number = capacity
