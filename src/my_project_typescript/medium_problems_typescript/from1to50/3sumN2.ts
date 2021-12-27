@@ -1,0 +1,1 @@
+// not recommend do this exercise in typescript
