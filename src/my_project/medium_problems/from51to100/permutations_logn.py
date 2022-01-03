@@ -27,6 +27,6 @@ class Solution:
         return results
     
     
-sample = [1,2,3,3]
+solution = Solution()
 
-print(Counter(sample))
+print(solution.permuteUnique([1,1,2]))
