@@ -3,8 +3,8 @@ function permuteUnique(nums: number[]): number[][] {
     function backtrack(comb:Array<number>, counter:{[key:number]: number}):void{
         if (comb.length === nums.length){
             console.log(comb)
-            results.push(comb)
-            results.push([1])
+            results.push(Array.from(comb, x => x))
+            
             return
         }
 
