@@ -1,4 +1,4 @@
-function minDistance(word1: string, word2: string): number {
+function minDistanceTwo(word1: string, word2: string): number {
 
     let n: number = word1.length + 1 
     let m: number = word2.length + 1
@@ -24,4 +24,4 @@ function minDistance(word1: string, word2: string): number {
 
 };
 
-console.log(minDistance("leetcode","etco"))
+console.log(minDistanceTwo("leetcode","etco"))
