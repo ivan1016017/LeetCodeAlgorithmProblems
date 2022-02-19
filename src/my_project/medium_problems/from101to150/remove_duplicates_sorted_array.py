@@ -20,6 +20,14 @@ class Solution:
                 i += 1
                 nums[i], nums[j] = nums[j], nums[i]
                 count += 1
+                
+            print(nums, i)
+                
+        
         return count
+    
+    
+solution = Solution()
+print(solution.removeDuplicates(nums = [0,0,1,1,1,1,2,3,3]))
         
         
