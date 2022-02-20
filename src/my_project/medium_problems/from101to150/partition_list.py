@@ -9,27 +9,17 @@ class ListNode:
         
 class Solution:
     def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
-        if not head or not head.next:
-            return head
-        dummy = ListNode(0)
-        dummy.next = head
-        i = dummy
-        j = head
-        while j:
-            if j.val < x:
-                if j == i.next:
-                    i = j
-                    prev = j
-                    j = j.next
-                else:
-                    tmp1 = i.next
-                    i.next = j
-                    tmp2 = j.next
-                    j.next = tmp1
-                    prev.next = tmp2
-                    i = j
-                    j = tmp2
+        dummy_smaller = smaller_cur = ListNode(0)
+        dummy_larger = larger_cur = ListNode(0)
+        cur = head
+        while cur:
+            if cur.val < x:
+                smaller_cur.next = cur
+                smaller_cur = smaller_cur.next
             else:
-                prev = j
-                j = j.next
-        return dummy.next
+                larger_cur.next = cur
+                larger_cur = larger_cur.next
+            cur = cur.next
+        larger_cur.next = None
+        smaller_cur.next = dummy_larger.next
+        return dummy_smaller.next
