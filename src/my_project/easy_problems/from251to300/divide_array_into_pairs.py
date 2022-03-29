@@ -18,7 +18,6 @@ class Solution:
                 answer = not answer 
                 return answer
         
-        
         return answer
     
 solution = Solution()
