@@ -20,3 +20,9 @@ class Solution:
                 return True 
             
         return False 
+    
+    
+class SecondSolution:
+    def isPowerOfThree(self, n: int) -> bool:
+        
+        return n > 0 == 3**19 % n
