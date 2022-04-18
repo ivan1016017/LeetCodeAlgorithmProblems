@@ -112,6 +112,10 @@ class Adapter:
     def __getattr__(self,attr):
         return getattr(self.obj, attr)
     
+    def original_dict(self):
+        return self.obj.__dict__
+
+    
     
 print(factory('Solutiosdfsdfn').romanToInt('III'))
 
