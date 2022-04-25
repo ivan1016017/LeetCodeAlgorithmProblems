@@ -14,8 +14,8 @@ def solution(S, A):
     while A[j]!=0:
         answer = answer + S[A[j]]
         j = A[j]
+    return answer
 
-    print(answer)    
     
 solution(S,A)
 
