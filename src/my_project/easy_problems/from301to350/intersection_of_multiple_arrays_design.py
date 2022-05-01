@@ -1,5 +1,5 @@
 from typing import List 
-
+from collections import defaultdict
 class Solution:
     
     __name_of_instance = "SolutionOne"
@@ -11,52 +11,43 @@ class Solution:
             Solution.__name_of_instance = self 
             
     @staticmethod
-    def get_instance() -> None:
+    def get_instance()-> None:
         print(Solution.__name_of_instance)
-    
-    def longestCommonPrefix(self, strs: List[str]) -> str:
-
-        answer = ""
-        j = 0
         
-        min_word = min(strs, key=len)
-        benchmark = len(min_word)
         
-        while j < benchmark:
-            for word in strs:
-                if word[j] != min_word[j]:
-                    return answer 
-            answer = answer + min_word[j]
-            j+=1     
+    def intersection(self, nums: List[List[int]]) -> List[int]:
         
+        
+        dict_nums = defaultdict(int)
+        for list_num in nums:
+            set_num = set(list_num)
+            for num in set_num:
+                dict_nums[num] += 1 
+                
+        answer = list()
+        
+        for num in dict_nums:
+            if dict_nums[num] >=len(nums):
+                answer.append(num)
+                
+        answer.sort()
+                
         return answer 
-   
+    
     
 class SolutionTwo:
+    def intersection(self, nums: List[List[int]]) -> List[int]:
+        return sorted(list(set.intersection(*map(set, nums))))
     
-     def longestCommonPrefix(self, strs: List[str]) -> str:
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
-        if not strs:
-            return ""
-        shortest = min(strs,key=len)
-        for i, ch in enumerate(shortest):
-            for other in strs:
-                if other[i] != ch:
-                    return shortest[:i]
-        return shortest 
     
 def factory(name = "SolutionOne"):
     
     localizers = {
         "SolutionOne": Solution,
-        "SolutionTwo": SolutionTwo
+        "SolutionTwo": SolutionTwo 
     }
     
     return localizers.get(name, Solution)()
-
 
 class WrittenText:
     
@@ -68,11 +59,12 @@ class WrittenText:
     
 class UnderlineWrapper(WrittenText):
     
-    def __init__(self, wrappedClass) -> None:
+    def __init__(self,wrappedClass) -> None:
         self.wrappedClass = wrappedClass
         
-    def render(self) -> str:
+    def render(self) -> str: 
         return "<u>{}</u>".format(self.wrappedClass.render())
+    
     
 class ItaliclineWrapper(WrittenText):
     
@@ -81,6 +73,7 @@ class ItaliclineWrapper(WrittenText):
         
     def render(self) -> str:
         return "<i>{}</i>".format(self._wrappedClass.render()) 
+    
     
 class LogisticRegression:
     
@@ -98,29 +91,30 @@ class XGBoost:
     def ml_model_type(self) -> str:
         return "Emsemble Technique"
     
-class Adapter: 
+class Adapter:
     
-    def __init__(self, obj, **adapter_methods) -> None:
+    def __init__(self,obj,**adapter_methods) -> None:
         self.obj = obj 
         self.__dict__.update(adapter_methods)
         
-    def __getattr__(self, attr):
-        return getattr(self.obj, attr)
+    def __getattr__(self,attr):
+        return getattr(self.obj,attr)
     
     def original_dict(self):
-        return self.obj.__dict__
-        
+        return self.obj.__obj__
 
-print(factory("sdfsdf").longestCommonPrefix(["flower","flow","flight"]))
-# print(factory("sdfsdf").longestCommonPrefix(["flower","flow","flight"]))
+    
+print(factory("sjdfsdf").intersection(nums = [[3,1,2,4,5],[1,2,3,4],[3,4,5,6]]))
+# print(factory("sjdfsdf").intersection(nums = [[3,1,2,4,5],[1,2,3,4],[3,4,5,6]]))
+Solution.get_instance()
 
 before = WrittenText("Eyes of the world.")
 
 after = UnderlineWrapper(ItaliclineWrapper(before))
 
 print(before.render())
+print(after.render())
 
-print(after.render()) 
 
 logistic = LogisticRegression()
 xgboost = XGBoost()
@@ -131,6 +125,5 @@ objects.append(Adapter(xgboost, model_type = xgboost.ml_model_type()))
 
 for obj in objects: 
     print("A {0} model of type {1}".format(obj.name, obj.model_type))
-
-
-
+    
+    
