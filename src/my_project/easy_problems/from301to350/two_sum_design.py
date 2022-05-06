@@ -1,0 +1,126 @@
+from typing import List 
+
+
+class Solution:
+    
+    __name_of_instance = "SolutionOne"
+    
+    def __init__(self) -> None:
+        if Solution.__name_of_instance != "SolutionOne":
+            raise Exception("This is a singleton class.")
+        else: 
+            Solution.__name_of_instance = self 
+            
+    @staticmethod
+    def get_instance(self) -> None:
+        print(Solution.__name_of_instance)
+    
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        hash_table = {}
+        
+        for i in range(len(nums)):
+            if nums[i] in  hash_table:
+                return [hash_table[nums[i]], i]
+            else: 
+                hash_table[target-nums[i]] = i
+                
+                
+class SolutionTwo():
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        
+        for idx, val in enumerate(nums):
+                if target - val in nums[idx + 1:]:
+                    return [idx, nums[idx + 1:].index(target - val) + (idx + 1)]
+                
+def factory(name = "SolutionOne"):
+    
+    localizers = {
+        "SolutionOne": Solution,
+        "SolutionTwo": SolutionTwo 
+    }
+    
+    return localizers.get(name, Solution)()
+
+
+class WrittenText:
+    
+    def __init__(self, text: str) -> None:
+        self._text = text 
+        
+    def render(self) -> str: 
+        return self._text
+    
+class UnderlineWrapper(WrittenText):
+    
+    def __init__(self, wrappedClass) -> None:
+        self.wrappedClass = wrappedClass
+        
+    def render(self) -> str:
+        return "<u>{}</u>".format(self.wrappedClass.render())
+    
+    
+class ItaliclineWrapper(WrittenText):
+    
+    def __init__(self, wrappedClass) -> None:
+        self._wrappedClass = wrappedClass
+        
+    def render(self) -> str:
+        return "<i>{}</i>".format(self._wrappedClass.render()) 
+
+
+
+class LogisticRegression:
+    
+    def __init__(self) -> None:
+        self.name = 'regression' 
+        
+    def model_type(self) -> str:
+        return "Regression Model"
+    
+class XGBoost:
+    
+    def __init__(self) -> None:
+        self.name = 'xgboost'
+        
+    def ml_model_type(self) -> str:
+        return "Emsemble Technique"
+    
+class Adapter:
+    
+    def __init__(self,obj,**adapter_methods) -> None:
+        self.obj = obj 
+        self.__dict__.update(adapter_methods)
+        
+    def __getattr__(self,attr):
+        return getattr(self.obj,attr)
+    
+    def original_dict(self):
+        return self.obj.__obj__
+
+print(factory("sdfsf").twoSum(nums = [2,7,11,15], target = 9))
+
+# print(factory("sdfsf").twoSum(nums = [2,7,11,15], target = 9))
+
+before = WrittenText("Eyes of the world.")
+
+after = UnderlineWrapper(ItaliclineWrapper(before))
+
+print(before.render())
+print(after.render())
+
+
+logistic = LogisticRegression()
+xgboost = XGBoost()
+objects = list()
+
+objects.append(Adapter(logistic, model_type = logistic.model_type()))
+objects.append(Adapter(xgboost, model_type = xgboost.ml_model_type()))
+
+for obj in objects: 
+    print("A {0} model of type {1}".format(obj.name, obj.model_type))
