@@ -40,11 +40,9 @@ interface EmployeeFunction {
 public class Hello {
 
 
-
-
-
-
     public static void main(String[] args) {
+
+
 
        new Thread(() -> {
            System.out.println("Printing from the Runnable");
@@ -62,19 +60,9 @@ public class Hello {
         employees.add(israel);
         employees.add(ramses);
 
-//        Collections.sort(employees, new Comparator<Employee>() {
-//            @Override
-//            public int compare(Employee employee1, Employee employee2){
-//                return employee1.getName().compareTo(employee2.getName());
-//            }
-//        });
 
         Collections.sort(employees, (Employee employee1, Employee employee2) ->
                 employee1.getName().compareTo(employee2.getName()));
-
-//        for (Employee employee: employees){
-//            System.out.println(employee.getName());
-//        }
 
         employees.forEach((employee) -> {
             System.out.println(employee.getName());
