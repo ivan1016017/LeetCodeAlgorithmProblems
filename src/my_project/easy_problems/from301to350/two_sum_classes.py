@@ -114,6 +114,9 @@ objects.append(Adapter(xgboost, model_type = xgboost.ml_model_type()))
 
 for obj in objects: 
     print("A {0} model of type {1}".format(obj.name, obj.model_type))
+    
+    
+# This is a comment that I want to delete"
 
 
  
