@@ -42,6 +42,6 @@ public class TempClass extends LongestCommonPrefix{
 
     @Override
     public void returnNumbers() {
-        System.out.println("This is an instance of the class with name: " + this.getName() + " and age: " + this.getAge());
+        System.out.println("This is an instance of the class with name: " + this.getName() + " and age: " + this.getAge() + " and address: " +  this.getAddress());
     }
 }
