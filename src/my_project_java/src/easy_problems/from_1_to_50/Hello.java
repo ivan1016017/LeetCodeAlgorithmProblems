@@ -3,7 +3,10 @@ package easy_problems.from_1_to_50;
 import java.sql.*;
 import java.util.*;
 import java.util.function.Consumer;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 class Employee {
     private String name;
 
@@ -41,6 +44,22 @@ public class Hello {
 
 
     public static void main(String[] args) {
+
+        LongestCommonPrefix newLongPrefix = new LongestCommonPrefix();
+        String[] arrayString = {"flower","flow","flight"};
+        System.out.println(newLongPrefix.longestCommonPrefix(arrayString));
+
+        newLongPrefix.returnNumbers();
+
+        TempClass newTempClass = new TempClass();
+
+        newTempClass.setName("Ivan");
+        newTempClass.setAge(33);
+
+        newTempClass.returnNumbers();
+
+
+
 
         PalindromeNumber solution  = new PalindromeNumber();
         System.out.println(solution.isPalindrome(12213));
