@@ -45,21 +45,6 @@ public class Hello {
 
     public static void main(String[] args) {
 
-        LongestCommonPrefix newLongPrefix = new LongestCommonPrefix();
-        String[] arrayString = {"flower","flow","flight"};
-        System.out.println(newLongPrefix.longestCommonPrefix(arrayString));
-
-        newLongPrefix.returnNumbers();
-
-        TempClass newTempClass = new TempClass();
-
-        newTempClass.setName("Ivan");
-        newTempClass.setAge(33);
-
-        newTempClass.returnNumbers();
-
-
-
 
         PalindromeNumber solution  = new PalindromeNumber();
         System.out.println(solution.isPalindrome(12213));
