@@ -7,6 +7,7 @@ public class TempClass extends LongestCommonPrefix{
     private int age;
 
     public TempClass(String name, String address, int age) {
+        this();
         this.name = name;
         this.address = address;
         this.age = age;
