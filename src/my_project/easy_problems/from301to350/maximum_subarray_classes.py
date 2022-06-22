@@ -1,4 +1,5 @@
 from typing import List 
+from abc import ABC, abstractmethod
 
 class Solution:
     
@@ -105,7 +106,40 @@ class Adapter:
     def original_dict(self):
         return self.obj.__dict__
     
+class MlModel:
+    @abstractmethod
+    def predict(self):
+        pass
     
+class RandomForest(MlModel):
+    def predict(self):
+        print("Random forest predicted value")
+        
+    def is_fitted(self):
+        print("Random forest model fits the data")
+        
+class LightGBM(MlModel):
+    def predict(self):
+        print("LightGBM predicted value")
+        
+    def is_fitted(self):
+            print("LightGBM model fits the data")
+        
+class Production:
+    
+    def __init__(self, model: MlModel):
+        self.model = model 
+        self.is_fitted = False 
+        
+    def predict(self):
+        
+        if self.is_fitted:
+            self.model.predict()
+            self.is_fitted = False 
+        else: 
+            self.model.is_fitted()
+            self.is_fitted = True
+        
 
     
     
@@ -136,4 +170,11 @@ for obj in objects:
 
 second_xgboost = XGBoost(7)
 print(second_xgboost)
+
+
+random_forest = RandomForest()
+
+ml_model = Production(random_forest)
+ml_model.predict()
+ml_model.predict()
     
