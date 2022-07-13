@@ -10,64 +10,60 @@ class Solution:
             raise Exception('This is a singleton class')
         else: 
             Solution.__name_of_instance = self 
-            
+        
     @staticmethod
     def get_instance() -> None: 
         print(Solution.__name_of_instance)
-    
-    def finalValueAfterOperations(self, operations: List[str]) -> int:
         
-        answer: int = 0
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
         
-        for signal in operations:
-            
-            if signal == "++X" or signal == "X++":
-                answer += 1 
-            else: 
-                answer -= 1 
+        solution: int = -1
+        count: int = 0
+        
+        for account in accounts:
+            count = 0
+            for money in account: 
+                count += money
                 
-        return answer 
+            solution = max(solution, count)
+            
+        return solution 
+    
     
 class SolutionTwo:
-    def finalValueAfterOperations(self, operations: List[str]) -> int:
-        
-        answer: int = 0
-        
-        for signal in operations:
-            if "+" in signal: 
-                answer += 1
-            else: 
-                answer -= 1 
-                
-        return answer
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+        maxWealth = 0
+        for i in range(len(accounts)):
+            totalWealth = sum(accounts[i])
+            maxWealth = max(maxWealth, totalWealth)
+        return maxWealth
     
     
-def factory(name:str = 'SolutionOne'):
+def factory(name='SolutionOne'):
     
     localizers = {
         'SolutionOne': Solution,
-        'SolutionTwo': SolutionTwo 
+        'SolutionTwo': SolutionTwo
     }
     
     return localizers.get(name, Solution)()
 
 
-class WrittenText: 
+class WrittenText:
     
-    def __init__(self,text:str) -> None: 
+    def __init__(self,text:str) -> None:
         self._text = text 
         
     def render(self) -> str: 
         return self._text 
-    
+        
 class UnderlineWrapper(WrittenText):
     
-    def __init__(self,wrappedClass:WrittenText) -> None: 
+    def __init__(self,wrappedClass:WrittenText):
         self._wrappedClass = wrappedClass
         
     def render(self) -> str: 
         return "<u>{}</u>".format(self._wrappedClass.render())
-    
     
 class ItaliclineWrapper(WrittenText):
     
@@ -77,7 +73,6 @@ class ItaliclineWrapper(WrittenText):
     def render(self) -> str:
         return "<i>{}</i>".format(self._wrappedClass.render()) 
     
-    
 class LogisticRegression:
     
     def __init__(self) -> None:
@@ -86,9 +81,9 @@ class LogisticRegression:
     def model_type(self) -> str:
         return 'Regression Model'
     
-class XGBoost:
+class XGBoost: 
     
-    def __init__(self,max_depth:int = None) -> None:
+    def __init__(self,max_depth:int = None) -> None: 
         self.name = 'XGBoost'
         self.max_depth = max_depth
         
@@ -105,12 +100,12 @@ class Adapter:
         self.__dict__.update(adapter_methods)
         
     def __getattr__(self,attr):
-        return getattr(self.obj,attr)
+        return getattr(self.obj, attr)
     
     def original_dict(self):
         return self.obj.__dict__
     
-class MlModel: 
+class MlModel:
     @abstractmethod
     def predict(self):
         pass 
@@ -144,9 +139,8 @@ class Production:
             self.model.is_fitted()
             self.is_fitted = True 
 
-
-print(factory('sdfsdf').finalValueAfterOperations(['++X']))
-# print(factory('sdfsdf').finalValueAfterOperations(['++X']))
+print(factory('sdfads').maximumWealth([[1,2,3],[4,5,6],[7,8,9]]))
+# print(factory('sdfads').maximumWealth([[1,2,3],[4,5,6],[7,8,9]]))
 
 before = WrittenText("Eyes of the world.")
 
@@ -154,7 +148,6 @@ after = UnderlineWrapper(ItaliclineWrapper(before))
 
 print(before.render())
 print(after.render())
-
 
 logistic = LogisticRegression()
 xgboost = XGBoost()
@@ -174,3 +167,4 @@ light_gbm = LightGBM()
 ml_model = Production(light_gbm)
 ml_model.predict()
 ml_model.predict()
+
