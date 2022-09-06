@@ -42,7 +42,7 @@ interface EmployeeFunction {
 }
 
 public class Hello {
-//    new comment
+
 
     public static void main(String[] args) {
 
