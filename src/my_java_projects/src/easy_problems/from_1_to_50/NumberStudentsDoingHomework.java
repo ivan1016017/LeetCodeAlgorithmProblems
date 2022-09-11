@@ -1,6 +1,6 @@
 package easy_problems.from_1_to_50;
 
-public class NumberStudentsDoingHomework {
+public class NumberStudentsDoingHomework implements Numbers {
     public int busyStudent(int[] startTime, int[] endTime, int queryTime) {
 
         int solution = 0;
@@ -11,5 +11,10 @@ public class NumberStudentsDoingHomework {
 
         return solution;
 
+    }
+
+    @Override
+    public void returnNumbers() {
+        System.out.println("This is a class that returns numbers");
     }
 }
