@@ -1,6 +1,5 @@
 from typing import List, Union
 from abc import ABC, abstractmethod
-from collections import defaultdict
 
 class Solution:
 
@@ -13,49 +12,54 @@ class Solution:
             Solution.__name_of_instance = self 
 
     @abstractmethod
-    def get_instance() -> None: 
+    def get_instance() -> None:
         print(Solution.__name_of_instance)
 
-    def sumOfUnique(self, nums: List[int]) -> int:
+    def finalPrices(self, prices: List[int]) -> List[int]:
 
-        solution = 0
-        solution_dict = defaultdict(int)
+        len_prices = len(prices)
 
-        for num in nums:
-            solution_dict[num] += 1 
-
-        for key, value in solution_dict.items():
-            
-            if value == 1:
-                solution += key 
+        for i in range(len_prices):
+            for j in range(i+1, len_prices):
+                if prices[i] >= prices[j]:
+                    prices[i] = prices[i]-prices[j]
+                    break
         
-        return solution 
-
+        return prices 
 
 class SolutionTwo:
-    def sumOfUnique(self, nums: List[int]) -> int:
-        hashmap = {}
-        for i in nums:
-            if i in hashmap.keys():
-                hashmap[i] += 1
+    def finalPrices(self, prices: List[int]) -> List[int]:
+
+        # initialize variables
+        solution = list()
+        len_prices = len(prices)
+        flag = -1
+
+        for i in range(len_prices):
+            flag = -1
+            for j in range(i+1, len_prices):
+                if prices[j] <= prices[i]:
+                    solution.append(prices[i]-prices[j])
+                    flag = 1
+                    break
+            if flag == 1: continue
             else:
-                hashmap[i] = 1
-        sum = 0
-        for k, v in hashmap.items():
-            if v == 1: sum += k
-        return sum
+                solution.append((prices[i]))
 
-class WrittenText:
+        return solution
 
-    def __init__(self,text:str) -> None:
+
+class WrittenText: 
+
+    def __init__(self,text:str) -> None: 
         self._text = text 
 
     def render(self) -> str: 
-        return self._text 
+        return self._text  
 
-class UnderlineWrapper(WrittenText): 
+class UnderlineWrapper(WrittenText):
 
-    def __init__(self,wrappedClass:WrittenText) -> None:
+    def __init__(self,wrappedClass:WrittenText) -> None: 
         self._wrappedClass = wrappedClass
 
     def render(self) -> str: 
@@ -69,6 +73,7 @@ class ItaliclineWrapper(WrittenText):
     def render(self) -> str:
         return "<i>{}</i>".format(self._wrappedClass.render()) 
 
+
 class LogisticRegression:
 
     def __init__(self) -> None: 
@@ -77,25 +82,25 @@ class LogisticRegression:
     def model_type(self) -> str: 
         return 'Regression Model'
 
-class XGBoost:
+class XGBoost: 
 
     def __init__(self,max_depth:int=None) -> None: 
         self.name = 'XGBoost'
         self.max_depth = max_depth
 
-    def ml_model_type(self) -> str:
+    def ml_model_type(self) -> str: 
         return 'Ensemble Technique'
 
     def __str__(self) -> str: 
-        return f"This is an instance of the class XGBoost with max_depth {self.max_depth}"
+        return f"This is an insance of the class XGBoost with max_depth {self.max_depth}"
 
-class Adapter:
+class Adapter: 
 
-    def __init__(self,obj,**adapter_methods):
+    def __init__(self,obj,**adapter_methods): 
         self.obj = obj 
         self.__dict__.update(adapter_methods)
 
-    def __getattr__(self,attr):
+    def __getattr__(self, attr):
         return getattr(self.obj,attr)
 
     def original_dict(self):
@@ -119,14 +124,14 @@ class LightGBM(MlModel):
         print("LightGBM predicted value")
         
     def is_fitted(self):
-            print("LightGBM model fits the data")
+        print("LightGBM model fits the data")
 
 class Production(MlModel):
-    
-    def __init__(self, model: MlModel):
+
+    def __init__(self,model:MlModel):
         self.model = model 
         self.is_fitted = False 
-        
+
     def predict(self):
         
         if self.is_fitted:
@@ -136,17 +141,18 @@ class Production(MlModel):
             self.model.is_fitted()
             self.is_fitted = True 
 
-def factory(name: str = 'SolutionOne') -> Union[Solution,SolutionTwo]:
+def factory(name:str = 'SolutionOne') -> Union[Solution,SolutionTwo]:
 
     localizers = {
         'SolutionOne': Solution,
         'SolutionTwo': SolutionTwo 
     }
 
-    return localizers.get(name,Solution)()
+    return localizers.get(name, Solution)()
 
-print(factory('sfsd').sumOfUnique(nums = [1,2,3,2]))
-# print(factory('sfsd').sumOfUnique(nums = [1,2,3,2]))
+
+print(factory('sdfd').finalPrices(prices = [8,4,6,2,3]))
+# print(factory('sdfd').finalPrices(prices = [8,4,6,2,3]))
 
 before = WrittenText("Eyes of the world.")
 
@@ -174,7 +180,3 @@ ml_model = Production(random_forest)
 # this is a new comment
 ml_model.predict()
 ml_model.predict()
-
-
-
-
