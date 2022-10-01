@@ -5,8 +5,7 @@ class Solution:
 
     __name_of_instance = 'SolutionOne'
 
-    def __init__(self) -> None:
-        
+    def __init__(self) -> None: 
         if Solution.__name_of_instance != 'SolutionOne':
             raise Exception('This is a singleton class')
         else: 
@@ -16,31 +15,38 @@ class Solution:
     def get_instance() -> None: 
         print(Solution.__name_of_instance)
 
-    def replaceElements(self, arr: List[int]) -> List[int]:
+    def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
 
-        index = len(arr)  -1 
-        max_right = -1
-        while index >= 0:
-            temp = arr[index]
-            arr[index] = max_right
-            if temp > max_right:
-                max_right = temp 
-            index -= 1
-        
-        return arr 
+        boxTypes.sort(key=lambda a: a[1], reverse=True)
+        solution = 0
+
+        for items in boxTypes:
+
+            if items[0] <= truckSize:
+                solution += items[0]*items[1]
+                truckSize -= items[0]
+            else: 
+                solution += truckSize*items[1]
+                return solution 
+
+        return solution
 
 class SolutionTwo:
-    def replaceElements(self, arr: List[int]) -> List[int]:
-        
-        max_so_far = -1
-        
-        for i in range(len(arr)-1, -1, -1):
-            curr = arr[i]
-            
-            arr[i] = max_so_far
-            max_so_far = max(max_so_far, curr)
-        
-        return arr
+    def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
+        c=0
+        s=0
+        boxTypes=sorted(boxTypes, key=lambda x : -x[1])
+        i=0
+        while truckSize>0 and i<len(boxTypes):
+            truckSize-=boxTypes[i][0]
+            if(truckSize>=0):
+                s+=boxTypes[i][0]*boxTypes[i][1]
+            else:
+                c=0-truckSize
+                s+=(boxTypes[i][0]-c)*boxTypes[i][1]
+            i+=1
+        return s
+
 
 class WrittenText: 
 
@@ -52,8 +58,8 @@ class WrittenText:
 
 class UnderlineWrapper(WrittenText):
 
-    def __init__(self,wrappedClass:WrittenText) -> None:
-        self._wrappedClass = wrappedClass
+    def __init__(self,wrappedClass:WrittenText) -> None: 
+        self._wrappedClass = wrappedClass 
 
     def render(self) -> str: 
         return '<u>{}</u>'.format(self._wrappedClass.render())
@@ -140,10 +146,11 @@ def factory(name:str = 'SolutionOne') -> Union[Solution,SolutionTwo]:
         'SolutionTwo': SolutionTwo 
     }
 
-    return localizers.get(name,Solution)()
+    return localizers.get(name, Solution)()
 
-print(factory('sdfsd').replaceElements(arr = [17,18,5,4,6,1]))
-# print(factory('sdfsd').replaceElements(arr = [17,18,5,4,6,1]))
+print(factory('sdfsd').maximumUnits(boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4))
+# print(factory('sdfsd').maximumUnits(boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4))
+
 
 
 before = WrittenText("Eyes of the world.")
@@ -171,4 +178,4 @@ random_forest = RandomForest()
 ml_model = Production(random_forest)
 # this is a new comment
 ml_model.predict()
-ml_model.predict()
+ml_model.predict()  
