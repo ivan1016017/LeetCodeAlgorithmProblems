@@ -134,3 +134,30 @@ def factory(name:str = 'SolutionOne') -> Union[Solution,SolutionTwo]:
 
 print(factory('asdfsd').findFinalValue(nums = [5,3,6,1,12], original = 3))
 # print(factory('asdfsd').findFinalValue(nums = [5,3,6,1,12], original = 3))
+
+before = WrittenText("Eyes of the world.")
+
+after = UnderlineWrapper(ItaliclineWrapper(before))
+
+print(before.render())
+print(after.render())
+
+logistic = LogisticRegression()
+xgboost = XGBoost()
+objects = list()
+
+objects.append(Adapter(logistic, model_type = logistic.model_type()))
+objects.append(Adapter(xgboost, model_type = xgboost.ml_model_type()))
+
+for obj in objects: 
+    print("A {0} model of type {1}".format(obj.name, obj.model_type))
+
+second_xgboost = XGBoost(7)
+print(second_xgboost)
+
+random_forest = RandomForest()
+
+ml_model = Production(random_forest)
+# this is a new comment
+ml_model.predict()
+ml_model.predict()  
