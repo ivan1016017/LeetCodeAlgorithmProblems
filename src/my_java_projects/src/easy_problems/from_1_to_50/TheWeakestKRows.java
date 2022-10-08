@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 
-public class TheWeakestKRows {
+public class TheWeakestKRows implements Numbers{
     public int[] kWeakestRows(int[][] mat, int k) {
 
         int lenMat = mat.length;
@@ -63,5 +63,10 @@ public class TheWeakestKRows {
             if (num == target) return true;
         }
         return false;
+    }
+
+    @Override
+    public void returnNumbers() {
+        System.out.println("This class does not return numbers");
     }
 }
