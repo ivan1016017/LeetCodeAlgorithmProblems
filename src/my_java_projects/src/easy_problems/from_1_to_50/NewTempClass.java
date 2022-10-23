@@ -6,7 +6,7 @@ public class NewTempClass extends TempClass{
     private String address;
 
     public NewTempClass() {
-        System.out.println("An instance of the NewTempClass was created");
+        System.out.println("An instance of the new temp class was created");
     }
 
     public NewTempClass(String name, int age, String address) {
