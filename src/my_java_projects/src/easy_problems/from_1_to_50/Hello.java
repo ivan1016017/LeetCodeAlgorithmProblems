@@ -46,32 +46,21 @@ public class Hello {
 
     public static void main(String[] args) {
 
-        NewTempClass ivanOne = new NewTempClass("IvanOne",38,"FuentesOne");
-        NewTempClass ivanTwo = new NewTempClass("IvanTwo",34,"FuentesTwo");
-        NewTempClass ivanThree = new NewTempClass("IvanThree",35,"FuentesThree");
-
-        NewTempClass[] ivans = {ivanOne,ivanTwo,ivanThree};
-
-        for (NewTempClass ivan: ivans){
-            System.out.println(ivan.getName());
-        }
-
-        Arrays.sort(ivans, (a,b) -> a.getAge() - b.getAge());
-
-        for (NewTempClass ivan: ivans){
-            System.out.println(ivan.getName());
-        }
-
-        ArrayList<NewTempClass> ivansNew = new ArrayList<>();
-
-        ivansNew.add(ivanOne);
-        ivansNew.add(ivanTwo);
-        ivansNew.add(ivanThree);
-
-        ivansNew.forEach((ivan) -> {
-            ivan.returnNumbers();
-        });
-
+//        NewTempClass ivanOne = new NewTempClass("IvanOne",38,"FuentesOne");
+//        NewTempClass ivanTwo = new NewTempClass("IvanTwo",34,"FuentesTwo");
+//        NewTempClass ivanThree = new NewTempClass("IvanThree",35,"FuentesThree");
+//
+//        NewTempClass[] ivans = {ivanOne,ivanTwo,ivanThree};
+//
+//        for (NewTempClass ivan: ivans){
+//            System.out.println(ivan.getName());
+//        }
+//
+//        Arrays.sort(ivans, (a,b) -> a.getAge() - b.getAge());
+//
+//        for (NewTempClass ivan: ivans){
+//            System.out.println(ivan.getName());
+//        }
 
 //        adding new comments
 
