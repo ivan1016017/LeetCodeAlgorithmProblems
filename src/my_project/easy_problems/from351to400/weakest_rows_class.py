@@ -37,6 +37,42 @@ class Solution:
 
         return solution 
 
+class SolutionThree:
+
+    __name_of_instance = 'SolutionOne'
+
+    def __init__(self) -> None: 
+        if Solution.__name_of_instance != 'SolutionOne':
+            raise Exception('This is a singleton class')
+        else: 
+            Solution.__name_of_instance = self 
+
+    @abstractmethod
+    def get_instance() -> None: 
+        print(Solution.__name_of_instance)
+
+    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
+
+        default_dict = defaultdict(int)
+        solution = list()
+
+        for i in range(len(mat)):
+            default_dict[i] = sum(mat[i])
+
+        k_indices = list()
+        k_indices = list(default_dict.values())
+        k_indices.sort()
+        k_indices = k_indices[:k]
+
+        for num in k_indices:
+            for i, j in default_dict.items():
+                if num == j and i not in solution:
+                    solution.append(i)
+                    break
+
+        return solution 
+
+
 
 class SolutionTwo(object):
     def kWeakestRows(self, mat, k):
