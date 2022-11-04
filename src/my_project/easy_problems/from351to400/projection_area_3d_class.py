@@ -1,6 +1,7 @@
 from typing import List, Union 
 from abc import ABC, abstractmethod
 
+
 class Solution:
 
     __name_of_instance = 'SolutionOne'
@@ -8,23 +9,57 @@ class Solution:
     def __init__(self) -> None: 
         if Solution.__name_of_instance != 'SolutionOne':
             raise Exception('This is a singleton class')
-        else:
-            Solution.__name_of_instance = self 
+        else: 
+            Solution.__name_of_instance
 
     @abstractmethod
     def get_instance(self) -> None: 
         print(Solution.__name_of_instance)
 
-    def smallestEqual(self, nums: List[int]) -> int:
+    def projectionArea(self, grid: List[List[int]]) -> int:
 
-        for i in range(len(nums)):
-            if i % 10== nums[i]:
-                return i 
-        return -1
+        projection_xy = 0
+        projection_xz = 0
+        projection_yz = 0
 
-class SolutionTwo(object):
-    def smallestEqual(self, nums, i=0):
-        return -1 if i == len(nums) else ( i if i%10 == nums[i] else self.smallestEqual(nums, i+1) )
+        for row in grid:
+            projection_xy += sum([1 for x in row if x != 0])
+            projection_xz += max(row)
+
+        def max_column(grid, j):
+            temp = list()
+            for i in range(len(grid)):
+                temp.append(grid[i][j])
+            return max(temp)
+
+        for j in range(len(grid[0])):
+            projection_yz += max_column(grid, j)
+
+        return projection_xy + projection_xz + projection_yz
+
+
+class SolutionTwo:
+    def projectionArea(self, grid: List[List[int]]) -> int:
+
+        res = 0
+        c = 0
+        len_grid = len(grid)
+
+        for i in range(len_grid):
+            res_1 = -1
+            res_2 = -1
+
+            for j in range(len_grid):
+
+                if grid[i][j] == 0:
+                    c += 1
+
+                res_1 = max(res_1,grid[i][j])
+                res_2 = max(res_2,grid[j][i])
+
+            res += res_1 + res_2
+
+        return res + len_grid**2 - c 
 
 class WrittenText: 
 
@@ -121,13 +156,14 @@ def factory(name:str='SolutionOne') -> Union[Solution,SolutionTwo]:
 
     localizers = {
         'SolutionOne':Solution,
-        'SolutionTwo':SolutionTwo
+        'SolutionTwo':SolutionTwo 
     }
 
     return localizers.get(name,Solution)()
 
-print(factory('sadfsd').smallestEqual(nums = [0,1,2]))
-# print(factory('sadfsd').smallestEqual(nums = [0,1,2]))
+print(factory('sdfsd').projectionArea(grid = [[1,2],[3,4]]))
+# print(factory('sdfsd').projectionArea(grid = [[1,2],[3,4]]))
+
 
 
 before = WrittenText("Eyes of the world.")
@@ -156,4 +192,3 @@ ml_model = Production(random_forest)
 # this is a new comment
 ml_model.predict()
 ml_model.predict()  
-
