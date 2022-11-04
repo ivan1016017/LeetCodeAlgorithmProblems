@@ -34,13 +34,13 @@ class SolutionTwo:
         
         return len(occurrences) == len(set(occurrences))  # set() is also O(n)
 
-class WrittenText:
+class WrittenText: 
 
     def __init__(self,text:str) -> None: 
         self._text = text 
 
     def render(self) -> str: 
-        return self._text 
+        return self._text
 
 class UnderlineWrapper(WrittenText):
 
@@ -70,15 +70,15 @@ class XGBoost:
 
     def __init__(self,max_depth:int=None) -> None: 
         self.name = 'XGBoost'
-        self.max_depth = max_depth 
+        self.max_depth = max_depth
 
     def ml_model_type(self) -> str: 
         return 'Ensemble Technique'
 
     def __str__(self) -> str: 
-        f"This is an instnace of the class XGBoost with max_depth {self.max_depth}"
+        return f"This is an instance of the class XGBoost with max_depth {self.max_depth}"
 
-class Adapter:
+class Adapter: 
 
     def __init__(self,obj,**adapter_methods):
         self.obj = obj 
@@ -87,12 +87,12 @@ class Adapter:
     def __getattr__(self,attr):
         return getattr(self.obj,attr)
 
-    def original_dict(self):
+    def original_dict(self): 
         return self.obj.__dict__
 
-class MlModel:
+class MlModel: 
     @abstractmethod
-    def predict(self):
+    def predict(self): 
         pass 
 
 class RandomForest(MlModel):
