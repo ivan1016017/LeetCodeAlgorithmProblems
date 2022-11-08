@@ -54,7 +54,6 @@ class SolutionTwo:
                 my_slide.append(matrix[i][j])
             return my_slide 
 
-            return None 
         for i in range(len(matrix)):
             for j in range(len(matrix[0])):
                 if matrix[i][j] == min([x for x in matrix[i][:]]) and matrix[i][j] == max(getColumn(matrix, j)): 
