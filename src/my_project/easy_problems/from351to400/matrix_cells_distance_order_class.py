@@ -1,5 +1,7 @@
 from typing import List, Union
 from abc import ABC, abstractmethod
+from collections import defaultdict
+
 
 class Solution:
 
@@ -15,41 +17,36 @@ class Solution:
     def get_instance(self) -> None: 
         print(Solution.__name_of_instance)
 
-    def generate(self,numRows):
-        pascal = [[1]*(i+1) for i in range(numRows)]
-        for i in range(numRows):
-            for j in range(1,i):
-                pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j]
-        return pascal
+    def allCellsDistOrder(self, rows: int, cols: int, rCenter: int, cCenter: int) -> List[List[int]]:
+
+        temp_collections = defaultdict(int)
+        for i in range(rows):
+            for j in range(cols):
+                temp_collections[(i,j)] = abs(i-rCenter) + abs(j-cCenter)
+
+        l = [([k[0],k[1]],v) for k,v in temp_collections.items()]
+        l.sort(key = lambda x: x[1])
+        l = [item[0] for item in l]
+        return l
 
 class SolutionTwo:
-    def generate(self, numRows: int) -> List[List[int]]:
 
-        temp = list()
-        solution = [[1],[1,1]]
+    def allCellsDistOrder(self, rows: int, cols: int, rCenter: int, cCenter: int) -> List[List[int]]:
 
-        if numRows == 1: 
-            return [[1]]
-        elif numRows == 2: 
-            return [[1],[1,1]]
-        else: 
+        answer = []
 
-            list_pascal = [1,1]
-            i = 3
+        for i in range(rows):
+            for j in range(cols):
 
-            while i <= numRows:
-                for j in range(i):
-                    if j == 0:
-                        temp.append(list_pascal[0])
-                    elif j == i -1: 
-                        temp.append(list_pascal[-1])
-                    elif j > 0 and j < i -1:
-                        temp.append(list_pascal[j-1]+list_pascal[j])
-                i+= 1
-                list_pascal = temp 
-                solution.append(list_pascal)
-                temp = []
-            return solution
+                answer.append([i,j])
+
+        answer.sort(key=lambda vector: self.distance(vector[0],vector[1],rCenter,cCenter))
+
+        return answer
+
+    def distance(self,row:int,col:int, rCenter:int, cCenter:int) -> int: 
+
+        return abs(row-rCenter) + abs(col-cCenter)
 
 class WrittenText:
 
@@ -95,7 +92,7 @@ class XGBoost:
     def __str__(self) -> str: 
         return f'This is an instance of the class XGBoost with max_depth {self.max_depth}'
 
-class Adapter:
+class Adapter: 
 
     def __init__(self,obj,**adapter_methods):
         self.obj = obj 
@@ -140,23 +137,21 @@ class Production(MlModel):
             self.is_fitted = False 
         else: 
             self.model.is_fitted()
-            self.is_fitted = True  
+            self.is_fitted = True   
 
 def factory(name:str='SolutionOne') -> Union[Solution,SolutionTwo]:
 
     localizers = {
         'SolutionOne':Solution,
-        'SolutionTwo':SolutionTwo
+        'SolutionTwo':SolutionTwo 
     }
 
     return localizers.get(name,Solution)()
 
-print(factory('sdfds').generate(5))
-# print(factory('sdfds').generate(5))
+print(factory('sdfsdf').allCellsDistOrder(rows = 1, cols = 2, rCenter = 0, cCenter = 0))
+# print(factory('sdfsdf').allCellsDistOrder(rows = 1, cols = 2, rCenter = 0, cCenter = 0))
 
 
-
-#adding new line
 before = WrittenText("Eyes of the world.")
 
 after = UnderlineWrapper(ItaliclineWrapper(before))
@@ -182,6 +177,4 @@ random_forest = RandomForest()
 ml_model = Production(random_forest)
 # this is a new comment
 ml_model.predict()
-ml_model.predict() 
-
-print(__name__)
+ml_model.predict()  
