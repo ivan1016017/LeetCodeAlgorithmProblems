@@ -12,7 +12,7 @@ class Solution:
             Solution.__name_of_instance = self 
 
     @abstractmethod
-    def get_instance() -> None: 
+    def get_instance(self) -> None: 
         print(Solution.__name_of_instance)
 
     def validWordAbbreviation(self, word: str, abbr: str) -> bool:
