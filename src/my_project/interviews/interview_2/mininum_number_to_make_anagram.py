@@ -146,6 +146,7 @@ random_forest = RandomForest()
 
 ml_model = Production(random_forest)
 # this is a new comment
+
 ml_model.predict()
 ml_model.predict()       
 
