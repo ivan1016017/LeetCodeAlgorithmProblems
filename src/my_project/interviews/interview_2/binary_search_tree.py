@@ -171,8 +171,6 @@ ml_model = Production(random_forest)
 ml_model.predict()
 ml_model.predict()       
 
-
-
 # a = ListNode(1,ListNode(2))
 # b = ListNode(3,ListNode(4))
 
