@@ -1,5 +1,6 @@
 from typing import List, Union, Collection, Mapping, Optional
 from abc import ABC, abstractmethod
+from collections import defaultdict
 
 class Solution:
 
@@ -12,24 +13,26 @@ class Solution:
             Solution.__name_of_instance = self 
 
     @abstractmethod
-    def get_instance(self) -> None: 
+    def get_instance() -> None: 
         print(Solution.__name_of_instance)
 
-    def summaryRanges(self, nums: List[int]) -> List[str]:
+    def majorityElement(self, nums: List[int]) -> List[int]:
 
-        if len(nums) == 0: return []
-        if len(nums) == 1: return [f'{nums[0]}']
-        s = []
-        pre = start = nums[0]
-        for i in nums[1:]:
-            if i - pre != 1:
-                s.append(f'{start}->{pre}' if pre - start > 0 else f'{pre}')
-                start = i
-            pre = i
-        s.append(f'{start}->{pre}' if pre - start > 0 else f'{pre}')
-        return s
+        dic_answer = defaultdict(int)
+        len_nums = len(nums)
+
+        for num in nums:
+            dic_answer[num] += 1
+
+        answer = list()
+
+        for num in dic_answer:
+            if dic_answer[num] > len_nums//3:
+                answer.append(num)
+
+        return answer 
     
-class WrittenText: 
+class WrittenText:
 
     def __init__(self, text:str) -> None: 
         self._text = text 
@@ -37,9 +40,9 @@ class WrittenText:
     def render(self) -> str: 
         return self._text
     
-class UnderlineWrapper(WrittenText):
+class UnderlineWrapper(WrittenText): 
 
-    def __init__(self,wrappedClass:WrittenText) -> None: 
+    def __init__(self,wrappedClass:WrittenText) -> None:
         self._wrappedClass = wrappedClass
 
     def render(self) -> str: 
@@ -65,7 +68,7 @@ class XGBoost:
 
     def __init__(self,max_depth:int=None):
         self.name = 'XGBoost'
-        self.max_depth = max_depth
+        self.max_depth = max_depth 
 
     def ml_model_type(self) -> str: 
         return 'Ensemble Technique'
@@ -73,9 +76,9 @@ class XGBoost:
     def __str__(self) -> str: 
         return f'This is an instance of the class XGBoost with max_depth {self.max_depth}'
     
-class Adapter:
-
-    def __init__(self,obj,**adapter_methods):
+class Adapter: 
+    
+    def __init__(self,obj,**adapter_methods): 
         self.obj = obj 
         self.__dict__.update(adapter_methods)
 
@@ -158,7 +161,4 @@ random_forest = RandomForest()
 ml_model = Production(random_forest)
 # this is a new comment
 ml_model.predict()
-ml_model.predict()       
-
-
-        
+ml_model.predict()  
