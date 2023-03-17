@@ -1,0 +1,11 @@
+from typing import List, Union, Collection, Mapping, Optional
+from abc import ABC, abstractmethod
+
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        
+        nums1[m:m+n] = nums2
+        nums1.sort()
