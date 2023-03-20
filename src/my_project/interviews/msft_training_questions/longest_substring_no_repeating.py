@@ -165,6 +165,10 @@ ml_model = Production(random_forest)
 ml_model.predict()
 ml_model.predict()  
 
+# testing rever in git#
+def sample_to_delete(name:str):
+    return name
+
 
 
 
