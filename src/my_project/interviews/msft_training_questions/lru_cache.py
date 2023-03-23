@@ -241,3 +241,7 @@ ml_model = Production(random_forest)
 # this is a new comment
 ml_model.predict()
 ml_model.predict() 
+
+# function to delete
+def function_to_delete(name:str='to be deleted') -> str: 
+    return name
