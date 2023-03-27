@@ -188,9 +188,7 @@ ml_model = Production(random_forest)
 ml_model.predict()
 ml_model.predict() 
 
-# time to be deleted
-def to_be_deleted(name:str='to be deleted') -> str:
-    return name
+
 
 
         
