@@ -177,3 +177,7 @@ ml_model = Production(random_forest)
 # this is a new comment
 ml_model.predict()
 ml_model.predict() 
+
+#function to be deleted
+def to_be_deleted(name:str='to be deleted') -> str:
+    return name 
