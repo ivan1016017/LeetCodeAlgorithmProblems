@@ -83,3 +83,7 @@ class RandomizedSet:
         # if running outside of leetcode, you need to `import random`.
         # random.choice will randomly select an element from the list of data.
         return random.choice(self.data)
+    
+# to be deleted 
+def to_be_deleted(name:str='to be deleted') -> str: 
+    return name 
