@@ -39,7 +39,7 @@ class MedianFinder:
             return (temp[len_tmp//2] + temp[(len_tmp//2) - 1])/2
         
 
-class MedianFinder:
+class MedianFinderTwo:
 
     def __init__(self):
         """
@@ -78,7 +78,3 @@ class MedianFinder:
             return (self.large[0] - self.small[0])/2.0
         return -float(self.small[0]) if len(self.small) > len(self.large) else float(self.large[0])
         
-solution = MedianFinder()
-solution.addNum(2)
-solution.addNum(1)
-print(solution.findMedian())
