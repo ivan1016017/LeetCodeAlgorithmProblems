@@ -1,5 +1,6 @@
 from typing import List, Union, Collection, Mapping, Optional
 from abc import ABC, abstractmethod
+import numpy as np
 
 
 class SparseVector:
