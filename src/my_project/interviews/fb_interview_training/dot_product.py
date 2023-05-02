@@ -22,9 +22,5 @@ class SparseVectorTwo:
 
     # Return the dotProduct of two sparse vectors
     def dotProduct(self, vec: 'SparseVectorTwo') -> int:
-        answer = 0
-        for i in range(len(self.nums)):
-            answer += self.nums[i]*vec.nums[i]
-
-        return answer 
-    
+        return np.dot(self.nums, vec.nums)
+        
