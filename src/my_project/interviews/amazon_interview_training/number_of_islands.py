@@ -216,9 +216,7 @@ ml_model = Production(random_forest)
 ml_model.predict()
 ml_model.predict()  
 
-# to be deleted 
-def to_be_deleted(name:str='to be deleted') -> str: 
-    return name 
+
 # solution = Solution()
 
 # print(solution.calculate(s = "(100+(4+5+2)-3)+(6+8)")) 
