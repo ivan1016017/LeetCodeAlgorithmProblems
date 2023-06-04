@@ -1,6 +1,5 @@
 from typing import List, Union, Collection, Mapping, Optional
 from abc import ABC, abstractmethod
-import math
 
 class Solution:
 
@@ -15,47 +14,35 @@ class Solution:
     @staticmethod
     def get_instance() -> None: 
         print(Solution.__name_of_instance)
-        
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        """
-        Do not return anything, modify nums1 in-place instead.
-        """
 
-        nums1[m:m+n] = nums2[:n]
+    def removeElement(self, nums: List[int], val: int) -> int:
 
-        nums1.sort()
+        temp_count = 0 
 
+        for i in range(len(nums)):
 
+            if nums[i] != val: 
+                nums[temp_count] = nums[i]
+                temp_count += 1
+
+        return temp_count
+    
 class SolutionTwo:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        """
-        Do not return anything, modify nums1 in-place instead.
-        """
-        # initialize the index of nums1 and nums 2
 
-        # assign the values of nums1 and nums2 to right_list and left_list
-        left_list = list()
-        right_list = list()
-        for i in range(len(nums1) - len(nums2)):
-            left_list.append(nums1[i])
+    def removeElement(self, nums: List[int], val: int) -> int:
 
-        for i in range(len(nums2)):
-            right_list.append(nums2[i])
-
-        left_list.append(math.inf)
-        right_list.append(math.inf)
-        # index nums 1
-        i = 0
-        # index nums 2
-        j = 0
-        for l in range(len(nums1)):
-            if left_list[i] < right_list[j]:
-                nums1[l] = left_list[i]
-                i += 1
-            elif left_list[i] >= right_list[j]:
-                nums1[l] = right_list[j]
-                j += 1
-
+        i,j=0,len(nums)-1;
+        if(j==-1): return 0
+        while(i<j):
+            if(nums[i]==val):
+                while(i<j and nums[j]==val): 
+                    j-=1
+                nums[i]=nums[j]
+                j-=1
+                continue
+            i+=1
+        return i+1 if nums[i]!=val else i
+    
 class WrittenText:
 
     def __init__(self, text:str) -> None: 
