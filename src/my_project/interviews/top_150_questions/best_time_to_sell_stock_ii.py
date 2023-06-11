@@ -194,9 +194,6 @@ ml_model.predict()
 # sign=-1
 # print(result)
 
-def to_be_reverted(name:str='to be reverted') -> str: 
-    return name 
-
 
             
 
