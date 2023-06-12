@@ -179,9 +179,6 @@ ml_model.predict()
 # sign=-1
 # print(result)
 
-def to_be_deleted(name:str='to be deleted') -> str: 
-    return name 
-
 
             
 
