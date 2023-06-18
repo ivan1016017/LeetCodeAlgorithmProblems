@@ -15,25 +15,50 @@ class Solution:
     @staticmethod
     def get_instance() -> None: 
         print(Solution.__name_of_instance)
+
+    def isHappy(self, n: int) -> bool:
         
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        def gen_next(n:int) -> int: 
 
-        answer = dict()
-        for i, num in enumerate(nums):
-            potential_match = target - num
-            if num in answer:
-                return [answer[num],i]
-            answer[potential_match] = i 
+            total = 0
 
+            while n > 0:
+
+                digit = n % 10
+                n = n // 10
+                total += digit**2
+
+            return total 
+        
+        seen = list()
+        
+        while n != 1 and n not in seen:
+            seen.append(n)
+            n = gen_next(n)
+
+        return n == 1
+    
 class SolutionTwo:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        dict={}
-        for i,n in enumerate(nums):
-            if n in dict:
-                return dict[n],i
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        l=[]
+        while n>0:
+            temp=0
+            while n>0:
+                temp+=(n%10)**2
+                n//=10
+            if temp in l:
+                return False
             else:
-                dict[target-n]=i
-
+                l.append(temp)
+            if temp==1:
+                return True
+            n=temp
+        return False
+    
 class WrittenText:
 
     def __init__(self, text:str) -> None: 
