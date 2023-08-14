@@ -16,6 +16,7 @@ class Solution:
     def get_instance() -> None: 
         print(Solution.__name_of_instance)
 
+
     def isPalindrome(self, s: str) -> bool:
         s = s.lower()
 
