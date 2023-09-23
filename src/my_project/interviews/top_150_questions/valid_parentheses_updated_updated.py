@@ -15,37 +15,50 @@ class Solution:
     def get_instance() -> None: 
         print(Solution.__name_of_instance)
 
-    def summaryRanges(self, nums: List[int]) -> List[str]:
+    def isValid(self, s: str) -> bool:
 
-        len_nums = len(nums)
+        temp = list()
+        valid_parentheses = ['(','[','{']
 
-        if len_nums == 0: return []
-        if len_nums == 1: return [f'{nums[0]}']
+        for p in s:
+            if p in valid_parentheses:
+                temp.append(p)
+            else: 
+                if not temp: 
+                    return False 
+                other_half = temp.pop()
+                if p == ')':
+                    if other_half != '(':
+                        return False 
+                elif p == ']':
+                    if other_half != '[':
+                        return False 
+                elif p == '}':
+                    if other_half != '{':
+                        return False 
+                else: 
+                    return False 
+                
+        if temp: 
+            return False
+        else: 
+            return True 
         
-        answer = list()
-        pre = start = nums[0]
 
-        for i in nums[1:]:
-
-            if i - pre != 1:
-                answer.append(f'{start}->{pre}' if pre-start>0 else f'{pre}')
-                start = i 
-
-            pre = i 
-
-        answer.append(f'{start}->{pre}' if pre-start>0 else f'{pre}')
-
-        return answer 
-    
-class SolutionTwo: 
-
-    def summaryRanges(self, nums):
-        ranges = []
-        for n in nums:
-            if not ranges or n > ranges[-1][-1] + 1:
-                ranges += [],
-            ranges[-1][1:] = n,
-        return ['->'.join(map(str, r)) for r in ranges]
+class SolutionTwo:
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        d = {'(':')', '{':'}','[':']'}
+        stack = []
+        for i in s:
+            if i in d:  # 1
+                stack.append(i)
+            elif len(stack) == 0 or d[stack.pop()] != i:  # 2
+                return False
+        return len(stack) == 0 
     
 class WrittenText:
 
