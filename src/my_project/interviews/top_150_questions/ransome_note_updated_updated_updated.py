@@ -1,5 +1,6 @@
 from typing import List, Union, Collection, Mapping, Optional
 from abc import ABC, abstractmethod
+from collections import defaultdict
 
 class Solution:
 
@@ -15,32 +16,31 @@ class Solution:
     def get_instance() -> None: 
         print(Solution.__name_of_instance)
 
-    def isSubsequence(self, s: str, t: str) -> bool:
+    def canConstruct(self, ransomNote, magazine):
 
-        p1,p2 = 0,0
-        len_s = len(s)
-        len_t = len(t)
-
-        while p1 < len_s and p2 < len_t:
-            if s[p1] == t[p2]:
-                p1 += 1
-            p2 += 1
-
-        return p1 == len_s 
-    
-
-class SolutionTwo:
-    def isSubsequence(self, s: str, t: str) -> bool:
-		
-        for i in range(len(s)):
-            try:
-                index = t.index(s[i])
-            except ValueError:
+        for s in set(ransomNote):
+            if ransomNote.count(s) > magazine.count(s):
                 return False 
             
-            t = t[index+1:]
+        return True 
 
-        return True
+class SolutionTwo:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+
+        dic_ransome = defaultdict(int)
+        dic_magazine = defaultdict(int)
+
+        for w in ransomNote:
+            dic_ransome[w] += 1
+
+        for w in magazine:
+            dic_magazine[w] += 1
+
+        for w in ransomNote:
+            if dic_magazine[w] < dic_ransome[w]:
+                return False 
+
+        return True 
     
 class WrittenText:
 
