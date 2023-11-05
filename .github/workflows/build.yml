@@ -24,7 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f pyproject.toml ]; then pip install -e . ; fi
     - name: Test with pytest
       run: |
-        pytest -v ./src/my_project/easy_problems/from401to450/test
+        pytest -v tests/
