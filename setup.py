@@ -10,12 +10,12 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = "mean",
-    version = "0.0.4",
-    author = "Ferdinand van Wyk",
-    description = ("An example of how to set up pytest and Sphinx."),
-    license = "GNU",
-    keywords = "example pytest tutorial sphinx",
+    name = "LeetCode_Algorithms",
+    version = "1.0",
+    author = "Ivan Dario Peñaloza Rojas",
+    description = ("Setting up Pytest"),
+    license = "MIT License",
+    keywords = "Pytest",
     packages=['src', 'tests'],
     long_description=read('README.md'),
     classifiers=[
