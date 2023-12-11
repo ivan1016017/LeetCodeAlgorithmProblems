@@ -1,6 +1,5 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+
 version = "1.0"
 authors = [
   { name="Ivan Dario Peñaloza Rojas", email="ivan1016017@gmail.com" },
