@@ -1,3 +1,5 @@
 numpy
 py
 pytest
+pytest-cov
+Faker
