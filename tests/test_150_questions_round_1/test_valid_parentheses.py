@@ -8,3 +8,8 @@ class ValidParenthesesTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.isValid(s = "()")
         self.assertTrue(output)
+
+    def test_no_valid_parentheses(self):
+        solution = Solution()
+        output = solution.isValid(s = "())")
+        self.assertFalse(output)
