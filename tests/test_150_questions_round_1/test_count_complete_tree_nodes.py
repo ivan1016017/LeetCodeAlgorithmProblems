@@ -16,5 +16,11 @@ class CountCompleteTreeNodesTestCase(unittest.TestCase):
         output = solution.countNodes(root=tree)
         self.assertEqual(3,output)
 
+    def test_count_single_complete_nodes(self):
+        solution = Solution()
+        tree = TreeNode(1) 
+        output = solution.countNodes(root=tree)
+        self.assertEqual(1,output)
+
     
 
