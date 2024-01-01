@@ -7,4 +7,6 @@ class MergeSortedArrayTestCase(unittest.TestCase):
     def test_merge_sorted_array(self):
         solution = Solution()
         output = solution.merge(nums1=[1,2],m=2,nums2=[3,4,5],n=3)
-        self.assertEqual(1,output[0])
+        
+        for i in range(5):
+            self.assertEqual(i+1,output[i])
