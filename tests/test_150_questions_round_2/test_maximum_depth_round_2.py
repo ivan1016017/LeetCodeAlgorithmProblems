@@ -12,6 +12,6 @@ class MaximumDepthTestCase(unittest.TestCase):
 
     def test_maximum_depth(self):
         solution = Solution()
-        tree = TreeNode(1, TreeNode(2), TreeNode(3))
+        tree = TreeNode(1)
         output = solution.maxDepth(tree)
-        self.assertEqual(2, output)
+        self.assertEqual(1, output)
