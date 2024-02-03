@@ -3,7 +3,6 @@ from abc import ABC, abstractmethod
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-
         j = 0
         len_nums = len(nums)
 
