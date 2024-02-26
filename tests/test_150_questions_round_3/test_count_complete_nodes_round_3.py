@@ -13,6 +13,6 @@ class CountNodesTestCase(unittest.TestCase):
 
     def test_count_non_empty_tree(self):
         solution = Solution()
-        tree = TreeNode(1)
+        tree = TreeNode(1, TreeNode(2), TreeNode(3))
         output = solution.countNodes(root=tree)
-        self.assertEqual(1, output)
+        self.assertEqual(3, output)
