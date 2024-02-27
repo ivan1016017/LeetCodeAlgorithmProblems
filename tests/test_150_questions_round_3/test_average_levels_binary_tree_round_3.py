@@ -6,7 +6,7 @@ class AverageLevelBinaryTreeTestCase(unittest.TestCase):
 
     def test_level_binary_tree(self):
         solution = Solution()
-        tree = TreeNode(1, TreeNode(3), TreeNode(4))
+        tree = TreeNode(1, TreeNode(2), TreeNode(3))
         output = solution.averageOfLevels(root=tree)
         self.assertEqual(1, output[0])
-        self.assertEqual(3.5, output[1])
+        self.assertEqual(2.5, output[1])
