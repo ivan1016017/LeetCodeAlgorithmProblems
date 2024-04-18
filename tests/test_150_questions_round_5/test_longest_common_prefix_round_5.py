@@ -15,6 +15,3 @@ class LongestCommonPrefixTestCase(unittest.TestCase):
         target = ''
         output = solution.longestCommonPrefix(strs=["a","b","c"])
         self.assertEqual(target, output)
-
-def sample_remove():
-    print('testing removing')
