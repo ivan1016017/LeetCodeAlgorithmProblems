@@ -17,3 +17,5 @@ class FindIndexFirstOccurrenceTestCase(unittest.TestCase):
         self.assertEqual(target, output)
 
 
+def sample():
+    print('delete me')
