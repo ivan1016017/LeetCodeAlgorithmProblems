@@ -13,3 +13,7 @@ class RansomeNoteTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.canConstruct(ransomNote="aa", magazine="ab")
         self.assertFalse(output)
+
+
+def sample():
+    print('remove that file')
