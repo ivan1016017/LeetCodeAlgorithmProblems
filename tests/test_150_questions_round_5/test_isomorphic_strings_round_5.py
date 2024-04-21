@@ -13,3 +13,6 @@ class IsomorphicStringsTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.isIsomorphic(s="foo", t="bar")
         self.assertFalse(output)
+
+def sample():
+    print('fixing bug')
