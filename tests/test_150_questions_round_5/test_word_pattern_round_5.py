@@ -18,3 +18,7 @@ class WordPatternTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.wordPattern(pattern='aa', s='bc')
         self.assertFalse(output)
+
+
+def sample():
+    print('testing')
