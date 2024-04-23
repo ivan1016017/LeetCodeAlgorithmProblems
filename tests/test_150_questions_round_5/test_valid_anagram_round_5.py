@@ -13,7 +13,3 @@ class ValidAnagramTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.isAnagram(s="rat", t="car")
         self.assertFalse(output)
-
-def sample():
-
-    print('testing')
