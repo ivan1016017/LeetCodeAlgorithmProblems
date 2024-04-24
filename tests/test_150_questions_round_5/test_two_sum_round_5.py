@@ -10,6 +10,3 @@ class TwoSumTestCase(unittest.TestCase):
         output = solution.twoSum(nums=[2,7,11,15], target=9)
         for k, v in enumerate(target):
             self.assertEqual(v, output[k])
-
-def sample():
-    print('testing feature')
