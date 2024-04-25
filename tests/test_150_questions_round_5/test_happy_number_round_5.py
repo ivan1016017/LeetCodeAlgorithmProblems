@@ -13,8 +13,3 @@ class HappyNumberTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.isHappy(n=2)
         self.assertFalse(output)
-
-
-def sample():
-
-    print('testing feature')
