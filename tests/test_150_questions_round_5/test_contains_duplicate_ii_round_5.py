@@ -13,7 +13,3 @@ class ContainsDuplicateTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.containsNearbyDuplicate(nums=[1,2,3,1,2,3], k=2)
         self.assertFalse(output)
-
-def sample():
-
-    print('testing feature')
