@@ -22,4 +22,8 @@ class SummaryRangesTestCase(unittest.TestCase):
         target = ["0->2","4->5","7"]
         for k, v in enumerate(target):
             self.assertEqual(v, output[k])
+
+
+def sample():
+    print('testing functionality')
         
