@@ -18,6 +18,3 @@ class ValidParenthesesTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.isValid(s='((')
         self.assertFalse(output)
-
-def sample():
-    print('testing')
