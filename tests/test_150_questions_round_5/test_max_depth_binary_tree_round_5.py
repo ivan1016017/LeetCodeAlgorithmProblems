@@ -15,6 +15,3 @@ class MaxDepthBinaryTreeTestCase(unittest.TestCase):
         target = 2
         output = solution.maxDepth(root=TreeNode(1, TreeNode(2), TreeNode(3)))
         self.assertEqual(target, output)
-
-def testing():
-    print('testing feature')
