@@ -17,3 +17,6 @@ class SameTreeTestCase(unittest.TestCase):
         q = None
         output = solution.isSameTree(p, q)
         self.assertFalse(output)
+
+def sample():
+    print('testing feature')
