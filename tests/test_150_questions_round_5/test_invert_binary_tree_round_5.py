@@ -12,3 +12,5 @@ class InvertBinaryTreeTestCase(unittest.TestCase):
         self.assertEqual(target.left.val, output.left.val)
         self.assertEqual(target.right.val, output.right.val)
 
+def sample():
+    print('testing feature')
