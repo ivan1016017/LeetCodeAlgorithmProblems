@@ -13,6 +13,3 @@ class SymmetricTreeTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.isSymmetric(TreeNode(1, TreeNode(2), TreeNode(3)))
         self.assertFalse(output)
-
-def sample():
-    print('testing features')
