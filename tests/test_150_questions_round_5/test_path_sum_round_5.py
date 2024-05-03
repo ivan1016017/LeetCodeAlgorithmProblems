@@ -13,3 +13,8 @@ class PathSumTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.hasPathSum(TreeNode(1,TreeNode(2),TreeNode(3)), 10)
         self.assertFalse(output)
+
+def testing_one():
+    pass 
+
+
