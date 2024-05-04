@@ -9,3 +9,6 @@ class AddBinaryTestCase(unittest.TestCase):
         output = solution.addBinary(a="11", b="1")
         target = '100'
         self.assertEqual(target, output)
+
+def sample1():
+    pass 
