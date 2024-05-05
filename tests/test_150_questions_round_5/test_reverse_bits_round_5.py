@@ -8,9 +8,3 @@ class RerverseBitsTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.reverseBits(n=7)
         self.assertEqual(3758096384, output)
-
-def sample1():
-    pass 
-
-def sample2():
-    pass 
