@@ -11,3 +11,6 @@ class RerverseBitsTestCase(unittest.TestCase):
 
 def sample1():
     pass 
+
+def sample2():
+    pass 
