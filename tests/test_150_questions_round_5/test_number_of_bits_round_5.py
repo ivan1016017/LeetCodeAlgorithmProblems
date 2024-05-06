@@ -9,3 +9,6 @@ class NumberOfBitsTestCase(unittest.TestCase):
         output = solution.hammingWeight(n=11)
         target = 3
         self.assertEqual(target, output)
+
+def sample1():
+    pass 
