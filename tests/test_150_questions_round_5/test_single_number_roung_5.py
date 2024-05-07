@@ -9,3 +9,6 @@ class SingleNumberTestCase(unittest.TestCase):
         output = solution.singleNumber(nums=[2,2,1])
         target = 1
         self.assertEqual(target, output)
+
+def sample1():
+    print('test1')
