@@ -6,8 +6,8 @@ class SingleNumberTestCase(unittest.TestCase):
 
     def test_single_number(self):
         solution = Solution()
-        output = solution.singleNumber(nums=[2,2,1])
-        target = 1
+        target = 3
+        output = solution.singleNumber(nums=[2,2,3])
         self.assertEqual(target, output)
 
 def sample1():
