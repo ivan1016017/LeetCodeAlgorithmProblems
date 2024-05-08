@@ -13,3 +13,6 @@ class isPalindromeTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.isPalindrome(x=123)
         self.assertFalse(output)
+
+def sample():
+    print('test1')
