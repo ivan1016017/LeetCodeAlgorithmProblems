@@ -11,5 +11,5 @@ class isPalindromeTestCase(unittest.TestCase):
 
     def test_is_no_palindrome(self):
         solution = Solution()
-        output = solution.isPalindrome(x=123)
+        output = solution.isPalindrome(x=124)
         self.assertFalse(output)
