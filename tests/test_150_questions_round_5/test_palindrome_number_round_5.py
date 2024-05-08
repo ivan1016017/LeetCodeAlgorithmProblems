@@ -16,3 +16,6 @@ class isPalindromeTestCase(unittest.TestCase):
 
 def sample():
     print('test1')
+
+def sample2():
+    print('test2')
