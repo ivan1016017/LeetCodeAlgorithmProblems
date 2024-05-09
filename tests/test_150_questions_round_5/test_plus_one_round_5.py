@@ -17,6 +17,3 @@ class PlusOneTestCase(unittest.TestCase):
         target = [1, 3]
         for k, v in enumerate(target):
             self.assertEqual(v, output[k])
-
-def sample1():
-    print('testing 1')
