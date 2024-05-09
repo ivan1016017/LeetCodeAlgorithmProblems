@@ -6,8 +6,8 @@ class PlusOneTestCase(unittest.TestCase):
 
     def test_leading_one(self):
         solution = Solution()
-        output = solution.plusOne(digits=[9, 9])
-        target = [1, 0, 0]
+        output = solution.plusOne(digits=[8, 9])
+        target = [1, 5]
         for k, v in enumerate(target):
             self.assertEqual(v, output[k])
 
