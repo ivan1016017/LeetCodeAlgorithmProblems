@@ -6,7 +6,7 @@ class SqrtxTestCase(unittest.TestCase):
 
     def test_perfect_sqrtx(self):
         solution = Solution()
-        output = solution.mySqrt(x=5)
+        output = solution.mySqrt(x=4)
         target = 2
         self.assertEqual(target, output)
 
@@ -15,7 +15,3 @@ class SqrtxTestCase(unittest.TestCase):
         output = solution.mySqrt(x=8)
         target = 2
         self.assertEqual(target, output)
-
-
-def sample1():
-    print('test1')
