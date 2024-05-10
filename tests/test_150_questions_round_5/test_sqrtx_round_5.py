@@ -15,3 +15,7 @@ class SqrtxTestCase(unittest.TestCase):
         output = solution.mySqrt(x=8)
         target = 2
         self.assertEqual(target, output)
+
+
+def sample1():
+    print('test1')
