@@ -24,9 +24,6 @@ class MyPowxnTestCase(unittest.TestCase):
 
     def test_power_even(self):
         solution = Solution()
-        output = solution.myPow(x=2, n=4)
-        target = 16
+        output = solution.myPow(x=2, n=2)
+        target = 4
         self.assertEqual(target, output)
-
-def sample1():
-    print('test1')
