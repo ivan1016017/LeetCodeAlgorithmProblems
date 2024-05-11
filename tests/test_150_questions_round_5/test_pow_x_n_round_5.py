@@ -27,3 +27,6 @@ class MyPowxnTestCase(unittest.TestCase):
         output = solution.myPow(x=2, n=2)
         target = 4
         self.assertEqual(target, output)
+
+def sample1():
+    print('test1')
