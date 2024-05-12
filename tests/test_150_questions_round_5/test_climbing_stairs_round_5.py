@@ -4,10 +4,10 @@ climbing_stairs  import Solution
 
 class ClimbingStairsTestCase(unittest.TestCase):
 
-    def test_climbing_stairs(self):
+    def test_climbing_stairs_trial(self):
         solution = Solution()
-        output = solution.climbStairs(n=2)
-        target = 2 
+        output = solution.climbStairs(n=3)
+        target = 3 
         self.assertEqual(target, output)
 
 def sample1():
