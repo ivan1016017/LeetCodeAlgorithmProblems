@@ -9,3 +9,6 @@ class ClimbingStairsTestCase(unittest.TestCase):
         output = solution.climbStairs(n=2)
         target = 2 
         self.assertEqual(target, output)
+
+def sample1():
+    print('test1')
