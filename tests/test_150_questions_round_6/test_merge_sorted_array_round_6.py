@@ -11,3 +11,6 @@ class MergeSortedArrayTestCase(unittest.TestCase):
 
         for k, v in enumerate(target):
             self.assertEqual(v, output[k])
+
+def sample1():
+    print('test 1')
