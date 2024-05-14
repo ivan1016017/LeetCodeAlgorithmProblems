@@ -4,10 +4,10 @@ remove_element import Solution
 
 class RemoveElementsTestCase(unittest.TestCase):
 
-    def test_remove_elements(self):
+    def test_remove_elements_trial_2(self):
         solution = Solution()
-        output = solution.removeElement(nums=[3,2,2,3], val=3)
-        target = 2
+        output = solution.removeElement(nums=[3,2,2,4], val=3)
+        target = 1
         return self.assertEqual(target, output)
     
 def sample1():
