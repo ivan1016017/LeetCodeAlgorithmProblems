@@ -9,3 +9,6 @@ class RemoveElementsTestCase(unittest.TestCase):
         output = solution.removeElement(nums=[3,2,2,3], val=3)
         target = 2
         return self.assertEqual(target, output)
+    
+def sample1():
+    print('testing 1')
