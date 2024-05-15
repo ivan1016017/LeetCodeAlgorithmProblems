@@ -4,8 +4,11 @@ remove_duplicates_sorted_array import Solution
 
 class RemoveDuplicatesTestCase(unittest.TestCase):
 
-    def test_remove_duplicates(self):
+    def test_remove_duplicates_trial_1(self):
         solution = Solution()
-        output = solution.removeDuplicates(nums = [1,1,2])
+        output = solution.removeDuplicates(nums = [1,1,3])
         target = 2 
         self.assertEqual(target, output)
+
+def sample():
+    print('testing')
