@@ -2,6 +2,7 @@ import unittest
 from src.my_project.interviews.top_150_questions_round_8\
 .best_time_to_sell_stocks import Solution
 
+
 class BestTimeToSellTestCase(unittest.TestCase):
 
     def test_best_time_to_sell(self):
