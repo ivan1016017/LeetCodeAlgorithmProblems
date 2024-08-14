@@ -7,6 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
 
