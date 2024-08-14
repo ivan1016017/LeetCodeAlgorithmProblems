@@ -2,7 +2,6 @@ import unittest
 from src.my_project.interviews.top_150_questions_round_8.\
 invert_binary_tree import TreeNode, Solution
 
-
 class InvertBinaryTreeTestCase(unittest.TestCase):
 
     def test_binary_tree(self):
