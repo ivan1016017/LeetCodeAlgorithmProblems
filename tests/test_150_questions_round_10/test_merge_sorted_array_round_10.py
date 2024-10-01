@@ -8,6 +8,5 @@ class MergeSortedArrayTestCase(unittest.TestCase):
         solution = Solution()
         output = solution.merge(nums1=[1,2,3,0,0,0], m=3, nums2=[2,5,6], n=3)
         target = [1,2,2,3,5,6]
-        self.assertEqual(2,3)
         for k, v in enumerate(target):
             self.assertEqual(output[k], v)
