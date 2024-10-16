@@ -12,3 +12,5 @@ class Solution:
                 return [dic_answer[v], k]
             else:
                 dic_answer[target - v] = k 
+
+        return -1
