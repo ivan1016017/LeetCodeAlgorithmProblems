@@ -1,5 +1,5 @@
 import unittest
-from my_project.interviews.top_150_questions_round_9\
+from src.my_project.interviews.top_150_questions_round_9\
 .number_of_one_bits import Solution
 
 class NumberOfOnesTestCase(unittest.TestCase):
