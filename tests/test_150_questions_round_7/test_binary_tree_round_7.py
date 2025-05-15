@@ -1,5 +1,5 @@
 import unittest
-from my_project.interviews.top_150_questions_round_7\
+from src.my_project.interviews.top_150_questions_round_7\
 .invert_binary_tree import TreeNode, Solution
 
 class InvertTreeTestCase(unittest.TestCase):
