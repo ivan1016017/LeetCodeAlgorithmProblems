@@ -1,6 +1,6 @@
 import unittest
 from src.my_project.interviews.top_150_questions_round_16\
-.palindrome import Solution
+.palindrome_number import Solution
 
 class PalindromeNumberTestCase(unittest.TestCase):
 
