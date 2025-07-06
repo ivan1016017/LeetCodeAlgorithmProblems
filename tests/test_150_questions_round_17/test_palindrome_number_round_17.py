@@ -2,6 +2,7 @@ import unittest
 from src.my_project.interviews.top_150_questions_round_17\
 .palindrome_number import Solution
 
+
 class PalindromeNumberTestCase(unittest.TestCase):
 
     def test_is_palindrome_number(self):
