@@ -55,3 +55,54 @@ class Solution:
                 i = j
         
         return res
+    
+
+'''
+Detailed Algorithm Explanation
+Part 1: Why Group by num % k?
+Two numbers can have a difference of exactly k only if they have the same remainder when divided by k.
+
+Mathematical proof:
+
+If a - b = k, then a = b + k
+Therefore: a % k = (b + k) % k = b % k
+Example: nums = [2, 3, 5, 8], k = 5
+
+num | num % 5 | group
+----|---------|-------
+2   |    2    | Group A
+3   |    3    | Group B  
+5   |    0    | Group C
+8   |    3    | Group B
+
+
+Why this matters: Elements from different groups can never differ by k, so they're independent. We can combine any subset from Group A with any subset from Group B.
+
+Part 2: Building Chains
+Within each group, we sort and find chains where consecutive elements differ by exactly k.
+
+Example with Group B: [3, 8]
+
+Sorted: [3, 8]
+Check: 8 - 3 = 5 ✓
+Chain: 3 → 8
+
+Another example: nums = [1, 6, 11, 21], k = 5 (all have remainder 1)
+
+Sorted: [1, 6, 11, 21]
+Check: 6-1=5 ✓, 11-6=5 ✓, 21-11=10 ✗
+Chains: [1 → 6 → 11], [21]
+
+
+Part 3: House Robber DP - The Core Logic
+For a chain like [3 → 8], we can't pick both 3 and 8 (they differ by k). This is the House Robber problem: count all subsets where we don't pick adjacent elements.
+
+DP State Variables
+take = number of valid subsets that INCLUDE the current element
+skip = number of valid subsets that EXCLUDE the current element
+
+DP Transitions
+new_take = skip      # To take current, we MUST have skipped previous
+new_skip = take + skip  # To skip current, we can take or skip previous
+
+'''    
