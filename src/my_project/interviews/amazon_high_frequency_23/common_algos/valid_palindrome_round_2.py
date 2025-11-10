@@ -1,6 +1,6 @@
 from typing import List, Union, Collection, Mapping, Optional
 from abc import ABC, abstractmethod
-import re 
+import re
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
@@ -11,13 +11,14 @@ class Solution:
         # Remove non-alphanumeric characters
         s = re.sub(pattern='[^a-zA-Z0-9]', repl='', string=s)
 
-        # Determine if palindrome or not
-
+        # Determine if it is palindrome or not
         len_s = len(s)
 
         for i in range(len_s//2):
-
-            if s[i] != s[len_s - 1 -i]:
+            
+            if s[i] != s[len_s - 1 - i]:
                 return False 
             
-        return True 
+        return True
+
+
