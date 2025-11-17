@@ -7,10 +7,12 @@ class Solution:
         digit_logs = []
 
         for log in logs:
-            _id, rest = log.split(' ', 1)
+            id_, rest = log.split(' ', 1)
             if rest[0].isdigit():
                 digit_logs.append(log)
             else:
-                letter_logs.append((rest, _id, log))
-        letter_logs.sort(key=lambda x: (x[0],x[1]))
-        return [orig for _,_,orig in letter_logs] + digit_logs
+                letter_logs.append((rest,id_,log))
+
+        # sort by content first, then identifier
+        letter_logs.sort(key=lambda x: (x[0], x[1]))
+        return [orig for _, _, orig in letter_logs] + digit_logs
