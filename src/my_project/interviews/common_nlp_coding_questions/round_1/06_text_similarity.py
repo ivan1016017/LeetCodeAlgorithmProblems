@@ -1,14 +1,14 @@
-from typing import Dict, List, Set
+from typing import Dict, List
 import math
 from collections import Counter
 import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
 
 
 class TextSimilarity:
-    """Class for computing text similarity using various methods."""
-    
-    def __init__(self):
-        self.idf_cache: Dict[str, float] = {}
+    """Class for computing text similarity using TF-IDF and cosine similarity."""
     
     def preprocess(self, text: str) -> List[str]:
         """
@@ -44,6 +44,7 @@ class TextSimilarity:
     def compute_idf(self, documents: List[List[str]]) -> Dict[str, float]:
         """
         Compute Inverse Document Frequency (IDF) for a corpus.
+        Uses scikit-learn's formula: log((1 + n) / (1 + df)) + 1
         
         Args:
             documents: List of tokenized documents
@@ -59,7 +60,8 @@ class TextSimilarity:
             for token in unique_tokens:
                 doc_freq[token] += 1
         
-        idf = {token: math.log(num_docs / (freq + 1)) + 1 
+        # Use scikit-learn's IDF formula for consistency
+        idf = {token: math.log((1 + num_docs) / (1 + freq)) + 1 
                for token, freq in doc_freq.items()}
         
         return idf
@@ -80,7 +82,7 @@ class TextSimilarity:
                  for token, tf_val in tf.items()}
         return tfidf
     
-    def cosine_similarity(self, vec1: Dict[str, float], vec2: Dict[str, float]) -> float:
+    def cosine_similarity_manual(self, vec1: Dict[str, float], vec2: Dict[str, float]) -> float:
         """
         Compute cosine similarity between two vectors.
         
@@ -109,31 +111,9 @@ class TextSimilarity:
         
         return dot_product / (magnitude1 * magnitude2)
     
-    def jaccard_similarity(self, tokens1: List[str], tokens2: List[str]) -> float:
+    def tfidf_similarity_manual(self, text1: str, text2: str, corpus: List[str] = None) -> float:
         """
-        Compute Jaccard similarity between two token lists.
-        
-        Args:
-            tokens1: First list of tokens
-            tokens2: Second list of tokens
-            
-        Returns:
-            Jaccard similarity score (0 to 1)
-        """
-        set1 = set(tokens1)
-        set2 = set(tokens2)
-        
-        intersection = len(set1 & set2)
-        union = len(set1 | set2)
-        
-        if union == 0:
-            return 0.0
-        
-        return intersection / union
-    
-    def tfidf_similarity(self, text1: str, text2: str, corpus: List[str] = None) -> float:
-        """
-        Compute similarity using TF-IDF and cosine similarity.
+        Compute similarity using manual TF-IDF and cosine similarity.
         
         Args:
             text1: First text document
@@ -164,56 +144,52 @@ class TextSimilarity:
         tfidf2 = self.compute_tfidf(tokens2, idf)
         
         # Compute cosine similarity
-        return self.cosine_similarity(tfidf1, tfidf2)
+        return self.cosine_similarity_manual(tfidf1, tfidf2)
     
-    def simple_similarity(self, text1: str, text2: str, method: str = "cosine") -> float:
+    def tfidf_similarity_sklearn(self, text1: str, text2: str, corpus: List[str] = None) -> float:
         """
-        Compute similarity using simple term frequency.
+        Compute similarity using scikit-learn TF-IDF and cosine similarity.
         
         Args:
             text1: First text document
             text2: Second text document
-            method: "cosine" or "jaccard"
+            corpus: Optional corpus for IDF calculation
             
         Returns:
             Similarity score (0 to 1)
         """
-        tokens1 = self.preprocess(text1)
-        tokens2 = self.preprocess(text2)
+        # Build corpus if not provided
+        if corpus is None:
+            documents = [text1, text2]
+        else:
+            documents = corpus + [text1, text2]
         
-        if method == "jaccard":
-            return self.jaccard_similarity(tokens1, tokens2)
-        else:  # cosine
-            tf1 = self.compute_tf(tokens1)
-            tf2 = self.compute_tf(tokens2)
-            return self.cosine_similarity(tf1, tf2)
+        # Create TF-IDF vectorizer with L2 normalization (default)
+        vectorizer = TfidfVectorizer(norm='l2')
+        tfidf_matrix = vectorizer.fit_transform(documents)
+        
+        # Get the TF-IDF vectors for text1 and text2
+        vec1 = tfidf_matrix[-2]
+        vec2 = tfidf_matrix[-1]
+        
+        # Compute cosine similarity
+        similarity = cosine_similarity(vec1, vec2)[0][0]
+        return similarity
 
 
 # Example usage
 if __name__ == "__main__":
     sim = TextSimilarity()
     
-    # Example 1: Simple cosine similarity
     doc1 = "The quick brown fox jumps over the lazy dog"
     doc2 = "The lazy dog sleeps under the tree"
     
-    score = sim.simple_similarity(doc1, doc2, method="cosine")
-    print(f"Cosine Similarity: {score:.4f}")
+    # Manual TF-IDF implementation
+    score_manual = sim.tfidf_similarity_manual(doc1, doc2)
+    print(f"Manual TF-IDF Cosine Similarity: {score_manual:.4f}")
     
-    # Example 2: Jaccard similarity
-    score = sim.simple_similarity(doc1, doc2, method="jaccard")
-    print(f"Jaccard Similarity: {score:.4f}")
+    # Scikit-learn TF-IDF implementation
+    score_sklearn = sim.tfidf_similarity_sklearn(doc1, doc2)
+    print(f"Scikit-learn TF-IDF Cosine Similarity: {score_sklearn:.4f}")
     
-    # Example 3: TF-IDF similarity
-    corpus = [
-        "The quick brown fox jumps over the lazy dog",
-        "The lazy dog sleeps under the tree",
-        "A quick brown dog runs in the park"
-    ]
-    
-    score = sim.tfidf_similarity(doc1, doc2, corpus)
-    print(f"TF-IDF Cosine Similarity: {score:.4f}")
-    
-    # Example 4: Identical documents
-    score = sim.tfidf_similarity(doc1, doc1)
-    print(f"Identical Document Similarity: {score:.4f}")
+    print(f"\nDifference: {abs(score_manual - score_sklearn):.4f}")
