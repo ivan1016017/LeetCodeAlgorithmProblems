@@ -1,6 +1,6 @@
 import unittest
 from src.my_project.interviews.top_150_questions_round_22\
-.rotate_array import Solution
+.ex_06_rotate_array import Solution
 
 class RotateArrayTestCase(unittest.TestCase):
 

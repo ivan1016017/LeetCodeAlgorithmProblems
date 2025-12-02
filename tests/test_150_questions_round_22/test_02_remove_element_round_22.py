@@ -1,6 +1,6 @@
 import unittest
 from src.my_project.interviews.top_150_questions_round_22\
-.remove_element import Solution
+.ex_02_remove_element import Solution
 
 class RemoveElementTestCase(unittest.TestCase):
 

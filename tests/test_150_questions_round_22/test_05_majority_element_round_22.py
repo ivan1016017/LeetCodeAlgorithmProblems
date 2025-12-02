@@ -1,6 +1,6 @@
 import unittest
 from src.my_project.interviews.top_150_questions_round_22\
-.majority_element import Solution
+.ex_05_majority_element import Solution
 
 class MajorityElementTestCase(unittest.TestCase):
 

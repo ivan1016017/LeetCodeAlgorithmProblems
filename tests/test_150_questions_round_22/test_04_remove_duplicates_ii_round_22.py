@@ -1,11 +1,10 @@
 import unittest
 from src.my_project.interviews.top_150_questions_round_22\
-.remove_duplicates_i import Solution
+.ex_04_remove_duplicates_ii import Solution
 
-class RemoveDuplicatesTestCase(unittest.TestCase):
-
+class RemoveDuplicatesTestCaseII(unittest.TestCase):
     def test_remove_duplicates(self):
         solution = Solution()
-        output = solution.removeDuplicates(nums=[1,1,2])
-        target = 2
+        output = solution.removeDuplicates(nums = [1,1,1,2,2,3])
+        target = 5
         self.assertEqual(output, target)
