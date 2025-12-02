@@ -5,14 +5,13 @@ import re
 class Solution:
     def isPalindrome(self, s: str) -> bool:
 
-        # to lowercase
+        # To lowercase
         s = s.lower()
 
-        # Remove non-alphanumerical characters
-        s = re.sub(pattern='[^a-zA-Z0-9]', repl='', string=s)
+        # Remove non-alphanumeric characters
+        s = re.sub(pattern=r'[^a-zA-Z0-9]', repl='', string=s)
 
-
-        # Identify palindrome
+        # Determine if s is palindrome or not
 
         len_s = len(s)
 
@@ -21,4 +20,4 @@ class Solution:
             if s[i] != s[len_s - 1 - i]:
                 return False 
             
-        return True 
+        return True
