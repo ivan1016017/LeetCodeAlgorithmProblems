@@ -1,6 +1,6 @@
 import unittest
 from src.my_project.interviews.top_150_questions_round_22\
-.merge_sorted_array import Solution
+.ex_01_merge_sorted_array import Solution
 
 class MergeSortedArrayTestCase(unittest.TestCase):
 
