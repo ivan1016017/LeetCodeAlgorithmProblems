@@ -1,0 +1,21 @@
+from typing import List, Union, Collection, Mapping, Optional
+from abc import ABC, abstractmethod
+
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+
+        """
+        :type matrix: List[List[int]]
+        :rtype: void Do not return anything, modify matrix in-place instead.
+        """        
+
+        n = len(matrix)
+
+        for i in range(n):
+            for j in range(i+1,n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+        for r in matrix:
+            r.reverse()
+
+        return matrix
