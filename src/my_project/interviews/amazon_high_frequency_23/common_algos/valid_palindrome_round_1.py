@@ -1,3 +1,4 @@
+
 from typing import List, Union, Collection, Mapping, Optional
 from abc import ABC, abstractmethod
 import re
@@ -15,8 +16,8 @@ class Solution:
         len_s = len(s)
 
         for i in range(len_s//2):
-            
+
             if s[i] != s[len_s - 1 - i]:
                 return False 
             
-        return True 
+        return True
