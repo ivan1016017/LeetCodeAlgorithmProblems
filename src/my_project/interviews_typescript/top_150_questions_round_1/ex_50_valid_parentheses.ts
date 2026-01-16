@@ -20,7 +20,5 @@ function isValid(s: string): boolean {
     }
 
     return checkList.length === 0
-
-
     
 };        
