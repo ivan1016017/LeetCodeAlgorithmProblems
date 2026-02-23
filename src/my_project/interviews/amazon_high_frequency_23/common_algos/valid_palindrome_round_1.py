@@ -17,7 +17,6 @@ class Solution:
         for i in range(len_s//2):
 
             if s[i] != s[len_s - 1 - i]:
-                return False 
+                return False
             
         return True 
-
