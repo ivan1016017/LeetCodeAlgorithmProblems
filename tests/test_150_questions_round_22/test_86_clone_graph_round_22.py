@@ -1,5 +1,6 @@
 import unittest
-from src.my_project.interviews.top_150_questions_round_22.ex_86_clone_graph import Solution, Node
+from src.my_project.interviews.top_150_questions_round_22\
+    .ex_86_clone_graph import Solution, Node
 from typing import Optional, List
 
 
