@@ -61,30 +61,3 @@ function snakesAndLadders(board: number[][]): number {
     // If we can't reach the target
     return -1;
 }
-
-// Test cases
-console.log("Example 1:");
-const board1 = [
-    [-1,-1,-1,-1,-1,-1],
-    [-1,-1,-1,-1,-1,-1],
-    [-1,-1,-1,-1,-1,-1],
-    [-1,35,-1,-1,13,-1],
-    [-1,-1,-1,-1,-1,-1],
-    [-1,15,-1,-1,-1,-1]
-];
-console.log(`Input: board = ${JSON.stringify(board1)}`);
-console.log(`Output: ${snakesAndLadders(board1)}`); // Expected: 4
-console.log(`Explanation: In the beginning, you start at square 1 (at row 5, column 0).
-You decide to move to square 2 and must take the ladder to square 15.
-You then decide to move to square 17 and must take the snake to square 13.
-You then decide to move to square 14 and must take the ladder to square 35.
-You then decide to move to square 36, ending the game.
-This is the lowest possible number of moves to reach the last square, so return 4.`);
-
-console.log("\nExample 2:");
-const board2 = [[-1,-1],[-1,3]];
-console.log(`Input: board = ${JSON.stringify(board2)}`);
-console.log(`Output: ${snakesAndLadders(board2)}`); // Expected: 1
-
-export { snakesAndLadders };
-
