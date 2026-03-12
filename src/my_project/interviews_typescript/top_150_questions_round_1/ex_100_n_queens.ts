@@ -53,4 +53,4 @@ function totalNQueens(n: number): number {
     return backtrack(0);
 }
 
-export { totalNQueens };
+
