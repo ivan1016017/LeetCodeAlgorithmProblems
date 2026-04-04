@@ -2,6 +2,7 @@ from typing import List
 from abc import ABC, abstractmethod
 import heapq
 
+
 class MedianFinder:
     """
     Find median from data stream using two heaps:
