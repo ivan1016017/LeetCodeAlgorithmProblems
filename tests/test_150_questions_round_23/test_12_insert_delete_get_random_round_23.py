@@ -1,5 +1,5 @@
 import unittest
-from src.my_project.interviews.top_150_questions_round_22\
+from src.my_project.interviews.top_150_questions_round_23\
 .ex_12_insert_delete_get_random import RandomizedSet
 
 class InsertAndDeleteGetRandomTestCase(unittest.TestCase):
