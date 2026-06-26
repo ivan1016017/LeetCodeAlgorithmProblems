@@ -1,5 +1,4 @@
-from typing import List, Union, Collection, Mapping, Optional
-from abc import ABC, abstractmethod
+from typing import List 
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -11,6 +10,6 @@ class Solution:
             if v in answer:
                 return [answer[v], k]
             else: 
-                answer[target - v] = k 
+                answer[target - v] = k
 
         return []
