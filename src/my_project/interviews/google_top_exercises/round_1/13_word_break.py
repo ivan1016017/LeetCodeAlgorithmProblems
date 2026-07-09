@@ -4,7 +4,6 @@ class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         words = set(wordDict)
         n = len(s)
-
         # dp[i] is True if s[:i] can be segmented into dictionary words.
         # Empty prefix is trivially segmentable.
         dp = [False] * (n + 1)
