@@ -11,8 +11,7 @@ class Solution:
     def __init__(self):
         self.max_sum = float('-inf')
 
-    def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        
+    def maxPathSum(self, root: Optional[TreeNode]) -> int:        
         
         def dfs(node: Optional[TreeNode]) -> int:
             """
