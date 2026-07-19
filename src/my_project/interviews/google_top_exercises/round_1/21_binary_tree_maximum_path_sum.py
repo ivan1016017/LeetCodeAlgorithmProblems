@@ -6,6 +6,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
 
     def __init__(self):
@@ -38,3 +39,4 @@ class Solution:
         
         dfs(root)
         return self.max_sum
+    
