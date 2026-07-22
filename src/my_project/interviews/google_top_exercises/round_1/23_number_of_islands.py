@@ -32,8 +32,6 @@ class Solution:
                     bfs(r,c)
 
         return islands
-
-
     
 
     def numIslands_DFS(grid: List[List[str]]) -> int:
