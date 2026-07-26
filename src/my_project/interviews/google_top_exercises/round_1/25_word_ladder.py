@@ -39,7 +39,16 @@ class Solution:
                     if neighbor not in visited:
                         visited.add(neighbor)
                         queue.append((neighbor, level + 1))
+                print(pattern,visited)
                 # Clear the bucket so it is not scanned again by another word.
                 patterns[pattern] = []
 
         return 0
+
+print('hello world')
+solution = Solution()
+
+print(solution.ladderLength(beginWord='hat',endWord='hut', wordList=['het',
+                                                                     'hit',
+                                                                     'hot',
+                                                                     'hut']))
