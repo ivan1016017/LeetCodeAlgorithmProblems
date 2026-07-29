@@ -15,7 +15,7 @@ class Solution:
             for c in range(n):
                 if grid[r][c] == 1:
                     freshy += 1
-                if grid[r][c] == 2:
+                elif grid[r][c] == 2:
                     q.append((r, c))
 
         # Run multi-source BFS
@@ -36,3 +36,4 @@ class Solution:
                 time += 1
 
         return time if freshy == 0 else -1
+        
