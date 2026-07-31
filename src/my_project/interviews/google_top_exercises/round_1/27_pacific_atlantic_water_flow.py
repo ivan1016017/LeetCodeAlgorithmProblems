@@ -1,7 +1,6 @@
 from typing import List
 from collections import deque
 
-
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
         """Reverse DFS from each ocean's border, then intersect the two sets.
