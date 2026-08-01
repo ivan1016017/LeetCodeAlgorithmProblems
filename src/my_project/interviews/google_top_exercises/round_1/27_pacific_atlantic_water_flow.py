@@ -39,7 +39,8 @@ class Solution:
             dfs(r, 0, pacific, heights[r][0])
             dfs(r, cols - 1, atlantic, heights[r][cols - 1])
 
-        return [[r, c] for r, c in pacific & atlantic]
+        return [[r, c] for r, c in pacific & atlantic]    
+    
 
     def pacificAtlantic_BFS(self, heights: List[List[int]]) -> List[List[int]]:
         """Same idea with multi-source BFS - avoids Python's recursion limit."""
