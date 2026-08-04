@@ -57,14 +57,19 @@ class Solution:
         adj = defaultdict(set)
         letters = {c for word in words for c in word}
 
+        print(list(zip(words, words[1:])))
         for first, second in zip(words, words[1:]):
             for c1, c2 in zip(first, second):
+                print(list(zip(first,second)))
+                print(c1,c2)
                 if c1 != c2:
                     adj[c1].add(c2)
                     break
             else:
                 if len(second) < len(first):
                     return ""
+
+        print(adj)
 
         visiting = {}
         order = []
@@ -88,3 +93,7 @@ class Solution:
                 return ""
 
         return "".join(reversed(order))
+
+
+solution = Solution()
+print(solution.alienOrder_DFS(words = ["wrt","wrf","er","ett","rftt"]))
