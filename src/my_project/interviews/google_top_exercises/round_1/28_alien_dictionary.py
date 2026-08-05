@@ -57,11 +57,11 @@ class Solution:
         adj = defaultdict(set)
         letters = {c for word in words for c in word}
 
-        print(list(zip(words, words[1:])))
+        print('debug 1',list(zip(words, words[1:])))
         for first, second in zip(words, words[1:]):
             for c1, c2 in zip(first, second):
-                print(list(zip(first,second)))
-                print(c1,c2)
+                print('debug 2', list(zip(first,second)))
+                print('debug 3',c1,c2)
                 if c1 != c2:
                     adj[c1].add(c2)
                     break
