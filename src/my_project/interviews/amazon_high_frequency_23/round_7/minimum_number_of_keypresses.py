@@ -17,12 +17,10 @@ class Solution:
         - 'e' (freq=1) → position 3 → 1 press → total: 1 * 1 = 1
         
         Total: 2 + 1 + 1 + 1 = 5
-        """
-        
+        """        
         # Count character frequencies
         freq = Counter(s)
         print(s)
-
         
         # Sort by frequency (descending) - greedy choice
         counts = sorted(freq.values(), reverse=True)
