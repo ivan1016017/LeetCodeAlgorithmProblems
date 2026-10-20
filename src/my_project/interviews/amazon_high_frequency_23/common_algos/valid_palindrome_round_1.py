@@ -8,7 +8,7 @@ class Solution:
         # To lowercase
         s = s.lower()
 
-        # Remover non-alphanumeric characters
+        # Remove non-alphanumeric characters
         s = re.sub(pattern=r'[^a-zA-Z0-9]', repl='', string=s)
 
         # Determine if s is palindrome or not
